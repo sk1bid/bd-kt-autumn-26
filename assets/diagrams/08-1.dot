@@ -1,0 +1,18 @@
+digraph G {
+graph [rankdir=TB, bgcolor="transparent", pad="0.3", nodesep="0.6", ranksep="0.8", splines=spline, outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", fillcolor="#edf4fa", color="#6588a3", fontcolor="#17364f", fontname="Arial", fontsize=14, margin="0.2,0.14", penwidth=1.1];
+edge [color="#586e80", fontcolor="#354b5d", fontname="Arial", fontsize=11, arrowsize=0.8, penwidth=1.1];
+"ВыполнениеРейса" [label="Выполнение\nРейса"];
+"Наряд" [label="Наряд"];
+"ПлановаяТочкаРейса" [label="Плановая\nТочка\nРейса"];
+"ПлановыйРейс" [label="Плановый\nРейс"];
+"Пользователь" [label="Пользователь"];
+"ПрохождениеТочки" [label="Прохождение\nТочки"];
+"УчастокВыполнения" [label="Участок\nВыполнения"];
+"ПлановыйРейс" -> "ВыполнениеРейса" [dir=none, label="один общий результат", taillabel="1", headlabel="0..1", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"ВыполнениеРейса" -> "УчастокВыполнения" [dir=none, label="последовательные\nчасти", taillabel="1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"Наряд" -> "УчастокВыполнения" [dir=none, label="назначает ресурсы", taillabel="1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"Пользователь" -> "УчастокВыполнения" [dir=none, label="оформляет передачу", taillabel="0..1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"УчастокВыполнения" -> "ПрохождениеТочки" [dir=none, label="подтверждает", taillabel="1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"ПлановаяТочкаРейса" -> "ПрохождениеТочки" [dir=none, label="уникальное\nпрохождение", taillabel="1", headlabel="0..1", labeldistance=1.8, labelangle=28, labelfontsize=11];
+}

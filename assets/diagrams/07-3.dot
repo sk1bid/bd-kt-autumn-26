@@ -1,0 +1,13 @@
+digraph G {
+graph [rankdir=TB, bgcolor="transparent", pad="0.3", nodesep="0.6", ranksep="0.8", splines=spline, outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", fillcolor="#edf4fa", color="#6588a3", fontcolor="#17364f", fontname="Arial", fontsize=14, margin="0.2,0.14", penwidth=1.1];
+edge [color="#586e80", fontcolor="#354b5d", fontname="Arial", fontsize=11, arrowsize=0.8, penwidth=1.1];
+graph [splines=polyline];
+Open [label="открыто", fillcolor="#edf4fa"];
+Closed [label="закрыто", fillcolor="#eaf3eb"];
+start [shape=circle, label="", width=0.16, height=0.16, fixedsize=true, fillcolor="#17364f", color="#17364f"];
+end [shape=doublecircle, label="", width=0.18, height=0.18, fixedsize=true, fillcolor="#17364f", color="#17364f"];
+start -> Open [label="обнаружение или\nподтверждение"];
+Open -> Closed [label="причина и автор"];
+Closed -> end [label=""];
+}

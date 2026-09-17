@@ -1,0 +1,25 @@
+digraph G {
+graph [rankdir=TB, bgcolor="transparent", pad="0.3", nodesep="0.6", ranksep="0.8", splines=spline, outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", fillcolor="#edf4fa", color="#6588a3", fontcolor="#17364f", fontname="Arial", fontsize=14, margin="0.2,0.14", penwidth=1.1];
+edge [color="#586e80", fontcolor="#354b5d", fontname="Arial", fontsize=11, arrowsize=0.8, penwidth=1.1];
+"Водитель" [label="Водитель"];
+"Маршрут" [label="Маршрут"];
+"НазначениеРейса" [label="Назначение\nРейса"];
+"Наряд" [label="Наряд"];
+"Остановка" [label="Остановка"];
+"ПлановаяТочкаРейса" [label="Плановая\nТочка\nРейса"];
+"ПлановыйРейс" [label="Плановый\nРейс"];
+"Пользователь" [label="Пользователь"];
+"ТочкаМаршрута" [label="Точка\nМаршрута"];
+"ТранспортноеСредство" [label="Транспортное\nСредство"];
+"Маршрут" -> "ТочкаМаршрута" [dir=none, label="состоит из (минимум\n2)", taillabel="1", headlabel="2..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"Остановка" -> "ТочкаМаршрута" [dir=none, label="используется как", taillabel="1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"Маршрут" -> "ПлановыйРейс" [dir=none, label="выполняется по", taillabel="1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"ПлановыйРейс" -> "ПлановаяТочкаРейса" [dir=none, label="сохраняет план\n(минимум 2)", taillabel="1", headlabel="2..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"Остановка" -> "ПлановаяТочкаРейса" [dir=none, label="запланирована как", taillabel="1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"Наряд" -> "НазначениеРейса" [dir=none, label="объединяет", taillabel="1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"ПлановыйРейс" -> "НазначениеРейса" [dir=none, label="имеет историю", taillabel="1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"Пользователь" -> "НазначениеРейса" [dir=none, label="создаёт", taillabel="1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"Водитель" -> "Наряд" [dir=none, label="назначен на", taillabel="1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"ТранспортноеСредство" -> "Наряд" [dir=none, label="назначено на", taillabel="1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+}

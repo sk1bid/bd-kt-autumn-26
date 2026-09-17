@@ -1,0 +1,34 @@
+[
+  {
+    "original_path": "/Users/sk1bid/.codex/attachments/7d3eaf4e-03a7-419f-9a9d-0d9576b9fbb9/pasted-text.txt",
+    "available": true,
+    "file": "8cc2972c0eb3-pasted-text.txt",
+    "sha256": "8cc2972c0eb3de99d557fb76aab6f419a07c29442ffa15b874545cb47ebfdbd6"
+  },
+  {
+    "original_path": "/Users/sk1bid/.codex/attachments/c6ef4077-e121-43e4-954b-0018bf4a044b/pasted-text.txt",
+    "available": true,
+    "file": "a47eaef36247-pasted-text.txt",
+    "sha256": "a47eaef36247832a8fde0d561015ec1002dd806760da0c53dabcd32c89ec0473"
+  },
+  {
+    "original_path": "/var/folders/9b/ykv30dmj4n9fwpxbh2zr87nr0000gn/T/codex-clipboard-a022975e-9757-4db2-b0a1-8957c33d53b4.png",
+    "available": false
+  },
+  {
+    "original_path": "/var/folders/9b/ykv30dmj4n9fwpxbh2zr87nr0000gn/T/codex-clipboard-a185220f-3f62-4f1e-a47c-37a112e78077.png",
+    "available": false
+  },
+  {
+    "original_path": "/var/folders/9b/ykv30dmj4n9fwpxbh2zr87nr0000gn/T/codex-clipboard-aa639b6d-4829-4466-b74a-3232e3e9c715.png",
+    "available": false
+  },
+  {
+    "original_path": "/var/folders/9b/ykv30dmj4n9fwpxbh2zr87nr0000gn/T/codex-clipboard-c6122608-ff88-432c-a4bb-de041115a6b9.png",
+    "available": false
+  },
+  {
+    "original_path": "/var/folders/9b/ykv30dmj4n9fwpxbh2zr87nr0000gn/T/codex-clipboard-f24dec28-9560-4c1a-a585-620455254cc1.png",
+    "available": false
+  }
+]

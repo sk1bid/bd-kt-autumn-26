@@ -1,0 +1,19 @@
+digraph G {
+graph [rankdir=TB, bgcolor="transparent", pad="0.3", nodesep="0.6", ranksep="0.8", splines=spline, outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", fillcolor="#edf4fa", color="#6588a3", fontcolor="#17364f", fontname="Arial", fontsize=14, margin="0.2,0.14", penwidth=1.1];
+edge [color="#586e80", fontcolor="#354b5d", fontname="Arial", fontsize=11, arrowsize=0.8, penwidth=1.1];
+"БортовоеУстройство" [label="Бортовое\nУстройство"];
+"Пользователь" [label="Пользователь"];
+"СостояниеСвязи" [label="Состояние\nСвязи"];
+"ТекущееПоложение" [label="Текущее\nПоложение"];
+"ТелеметрическийПакет" [label="Телеметрический\nПакет"];
+"ТранспортноеСредство" [label="Транспортное\nСредство"];
+"УстановкаУстройства" [label="Установка\nУстройства"];
+"ТранспортноеСредство" -> "УстановкаУстройства" [dir=none, label="имеет историю\nустановок", taillabel="1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"БортовоеУстройство" -> "УстановкаУстройства" [dir=none, label="устанавливается", taillabel="1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"Пользователь" -> "УстановкаУстройства" [dir=none, label="оформляет", taillabel="1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"БортовоеУстройство" -> "ТелеметрическийПакет" [dir=none, label="отправляет", taillabel="0..1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"УстановкаУстройства" -> "ТелеметрическийПакет" [dir=none, label="определяет автобус", taillabel="0..1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"ТранспортноеСредство" -> "ТекущееПоложение" [dir=none, label="имеет координату", taillabel="1", headlabel="0..1", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"ТранспортноеСредство" -> "СостояниеСвязи" [dir=none, label="имеет состояние", taillabel="1", headlabel="1", labeldistance=1.8, labelangle=28, labelfontsize=11];
+}

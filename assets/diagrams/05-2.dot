@@ -1,0 +1,26 @@
+digraph G {
+graph [rankdir=TB, bgcolor="transparent", pad="0.3", nodesep="0.6", ranksep="0.8", splines=spline, outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", fillcolor="#edf4fa", color="#6588a3", fontcolor="#17364f", fontname="Arial", fontsize=14, margin="0.2,0.14", penwidth=1.1];
+edge [color="#586e80", fontcolor="#354b5d", fontname="Arial", fontsize=11, arrowsize=0.8, penwidth=1.1];
+"Водитель" [label="Водитель"];
+"ВыполнениеРейса" [label="Выполнение\nРейса"];
+"Наряд" [label="Наряд"];
+"Отклонение" [label="Отклонение"];
+"ПлановаяТочкаРейса" [label="Плановая\nТочка\nРейса"];
+"ПлановыйРейс" [label="Плановый\nРейс"];
+"Пользователь" [label="Пользователь"];
+"ПрохождениеТочки" [label="Прохождение\nТочки"];
+"РешениеПоРейсу" [label="Решение\nПо\nРейсу"];
+"Роль" [label="Роль"];
+"ПлановыйРейс" -> "ВыполнениеРейса" [dir=none, label="исполняется как", taillabel="1", headlabel="0..1", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"ВыполнениеРейса" -> "РешениеПоРейсу" [dir=none, label="имеет историю\nрешений", taillabel="1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"Пользователь" -> "РешениеПоРейсу" [dir=none, label="принимает", taillabel="1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"ВыполнениеРейса" -> "ПрохождениеТочки" [dir=none, label="оценивается по", taillabel="1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"ПлановаяТочкаРейса" -> "ПрохождениеТочки" [dir=none, label="проходится как", taillabel="1", headlabel="0..1", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"ПрохождениеТочки" -> "Отклонение" [dir=none, label="объясняет оценку", taillabel="0..1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"ВыполнениеРейса" -> "Отклонение" [dir=none, label="уточняет", taillabel="0..1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"Наряд" -> "Отклонение" [dir=none, label="имеет", taillabel="1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"Пользователь" -> "Отклонение" [dir=none, label="закрывает", taillabel="0..1", headlabel="0..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"Пользователь" -> "Роль" [dir=none, label="имеет", taillabel="0..N", headlabel="1..N", labeldistance=1.8, labelangle=28, labelfontsize=11];
+"Водитель" -> "Пользователь" [dir=none, label="имеет учётную запись", taillabel="0..1", headlabel="0..1", labeldistance=1.8, labelangle=28, labelfontsize=11];
+}

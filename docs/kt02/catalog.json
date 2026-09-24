@@ -1,0 +1,2123 @@
+{
+  "tables": [
+    {
+      "name": "app_user",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint",
+          "required": true,
+          "identity": "a",
+          "default_value": null
+        },
+        {
+          "name": "login",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "full_name",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "driver_id",
+          "type": "bigint",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "active",
+          "type": "boolean",
+          "required": true,
+          "identity": "",
+          "default_value": "true"
+        }
+      ],
+      "constraints": [
+        {
+          "name": "app_user_driver_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (driver_id) REFERENCES transport.driver(id)"
+        },
+        {
+          "name": "app_user_driver_id_key",
+          "kind": "u",
+          "definition": "UNIQUE (driver_id)"
+        },
+        {
+          "name": "app_user_full_name_check",
+          "kind": "c",
+          "definition": "CHECK ((btrim(full_name) \u003c\u003e ''::text))"
+        },
+        {
+          "name": "app_user_login_check",
+          "kind": "c",
+          "definition": "CHECK (((login = lower(login)) AND (btrim(login) \u003c\u003e ''::text)))"
+        },
+        {
+          "name": "app_user_login_key",
+          "kind": "u",
+          "definition": "UNIQUE (login)"
+        },
+        {
+          "name": "app_user_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (id)"
+        },
+        {
+          "name": "model_consistency",
+          "kind": "t",
+          "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+        }
+      ]
+    },
+    {
+      "name": "assignment",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint",
+          "required": true,
+          "identity": "a",
+          "default_value": null
+        },
+        {
+          "name": "trip_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "duty_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "started_at",
+          "type": "timestamp with time zone",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "ended_at",
+          "type": "timestamp with time zone",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "created_by",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "reason",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "ended_by",
+          "type": "bigint",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "end_reason",
+          "type": "text",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        }
+      ],
+      "constraints": [
+        {
+          "name": "assignment_check",
+          "kind": "c",
+          "definition": "CHECK (((ended_at IS NULL) OR (ended_at \u003e started_at)))"
+        },
+        {
+          "name": "assignment_check1",
+          "kind": "c",
+          "definition": "CHECK ((((ended_at IS NULL) AND (ended_by IS NULL) AND (end_reason IS NULL)) OR ((ended_at IS NOT NULL) AND (ended_by IS NOT NULL) AND (end_reason IS NOT NULL) AND (btrim(end_reason) \u003c\u003e ''::text))))"
+        },
+        {
+          "name": "assignment_created_by_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (created_by) REFERENCES transport.app_user(id)"
+        },
+        {
+          "name": "assignment_duty_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (duty_id) REFERENCES transport.duty(id)"
+        },
+        {
+          "name": "assignment_ended_by_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (ended_by) REFERENCES transport.app_user(id)"
+        },
+        {
+          "name": "assignment_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (id)"
+        },
+        {
+          "name": "assignment_reason_check",
+          "kind": "c",
+          "definition": "CHECK ((btrim(reason) \u003c\u003e ''::text))"
+        },
+        {
+          "name": "assignment_trip_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (trip_id) REFERENCES transport.planned_trip(id)"
+        },
+        {
+          "name": "assignment_trip_id_tstzrange_excl",
+          "kind": "x",
+          "definition": "EXCLUDE USING gist (trip_id WITH =, tstzrange(started_at, ended_at, '[)'::text) WITH \u0026\u0026)"
+        },
+        {
+          "name": "model_consistency",
+          "kind": "t",
+          "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+        }
+      ]
+    },
+    {
+      "name": "connection_state",
+      "columns": [
+        {
+          "name": "vehicle_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "last_confirmed_at",
+          "type": "timestamp with time zone",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "installation_id",
+          "type": "bigint",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "message_id",
+          "type": "uuid",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "revision",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": "1"
+        }
+      ],
+      "constraints": [
+        {
+          "name": "connection_state_check",
+          "kind": "c",
+          "definition": "CHECK ((((last_confirmed_at IS NULL) AND (installation_id IS NULL) AND (message_id IS NULL)) OR ((last_confirmed_at IS NOT NULL) AND (installation_id IS NOT NULL) AND (message_id IS NOT NULL))))"
+        },
+        {
+          "name": "connection_state_installation_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (installation_id) REFERENCES transport.device_installation(id)"
+        },
+        {
+          "name": "connection_state_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (vehicle_id)"
+        },
+        {
+          "name": "connection_state_revision_check",
+          "kind": "c",
+          "definition": "CHECK ((revision \u003e 0))"
+        },
+        {
+          "name": "connection_state_vehicle_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (vehicle_id) REFERENCES transport.vehicle(id)"
+        },
+        {
+          "name": "model_consistency",
+          "kind": "t",
+          "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+        }
+      ]
+    },
+    {
+      "name": "current_position",
+      "columns": [
+        {
+          "name": "vehicle_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "installation_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "message_id",
+          "type": "uuid",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "generated_at",
+          "type": "timestamp with time zone",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "latitude",
+          "type": "numeric(9,6)",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "longitude",
+          "type": "numeric(9,6)",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "speed_kmh",
+          "type": "numeric(7,2)",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "revision",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": "1"
+        }
+      ],
+      "constraints": [
+        {
+          "name": "current_position_installation_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (installation_id) REFERENCES transport.device_installation(id)"
+        },
+        {
+          "name": "current_position_latitude_check",
+          "kind": "c",
+          "definition": "CHECK (((latitude \u003e= ('-90'::integer)::numeric) AND (latitude \u003c= (90)::numeric)))"
+        },
+        {
+          "name": "current_position_longitude_check",
+          "kind": "c",
+          "definition": "CHECK (((longitude \u003e= ('-180'::integer)::numeric) AND (longitude \u003c= (180)::numeric)))"
+        },
+        {
+          "name": "current_position_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (vehicle_id)"
+        },
+        {
+          "name": "current_position_revision_check",
+          "kind": "c",
+          "definition": "CHECK ((revision \u003e 0))"
+        },
+        {
+          "name": "current_position_speed_kmh_check",
+          "kind": "c",
+          "definition": "CHECK ((speed_kmh \u003e= (0)::numeric))"
+        },
+        {
+          "name": "current_position_vehicle_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (vehicle_id) REFERENCES transport.vehicle(id)"
+        },
+        {
+          "name": "model_consistency",
+          "kind": "t",
+          "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+        }
+      ]
+    },
+    {
+      "name": "deviation",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint",
+          "required": true,
+          "identity": "a",
+          "default_value": null
+        },
+        {
+          "name": "duty_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "trip_id",
+          "type": "bigint",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "point_no",
+          "type": "integer",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "kind",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "detected_at",
+          "type": "timestamp with time zone",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "measured_value",
+          "type": "numeric",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "episode_started_at",
+          "type": "timestamp with time zone",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "closed_at",
+          "type": "timestamp with time zone",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "closed_by",
+          "type": "bigint",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "close_reason",
+          "type": "text",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "comment",
+          "type": "text",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        }
+      ],
+      "constraints": [
+        {
+          "name": "deviation_check",
+          "kind": "c",
+          "definition": "CHECK ((((kind = ANY (ARRAY['late'::text, 'early'::text])) AND (trip_id IS NOT NULL) AND (point_no IS NOT NULL) AND (measured_value IS NOT NULL)) OR ((kind = ANY (ARRAY['off_route'::text, 'failed'::text])) AND (trip_id IS NOT NULL) AND (point_no IS NULL)) OR ((kind = 'connection_lost'::text) AND (point_no IS NULL) AND (episode_started_at IS NOT NULL))))"
+        },
+        {
+          "name": "deviation_check1",
+          "kind": "c",
+          "definition": "CHECK (((episode_started_at IS NULL) OR (episode_started_at \u003c= detected_at)))"
+        },
+        {
+          "name": "deviation_check2",
+          "kind": "c",
+          "definition": "CHECK ((((closed_at IS NULL) AND (closed_by IS NULL) AND (close_reason IS NULL) AND (comment IS NULL)) OR ((closed_at IS NOT NULL) AND (closed_at \u003e= detected_at) AND (closed_by IS NOT NULL) AND (close_reason IS NOT NULL) AND (comment IS NOT NULL) AND (btrim(comment) \u003c\u003e ''::text))))"
+        },
+        {
+          "name": "deviation_check3",
+          "kind": "c",
+          "definition": "CHECK (((close_reason IS DISTINCT FROM 'unreliable_data'::text) OR (kind = ANY (ARRAY['late'::text, 'early'::text]))))"
+        },
+        {
+          "name": "deviation_close_reason_check",
+          "kind": "c",
+          "definition": "CHECK ((close_reason = ANY (ARRAY['explained'::text, 'replacement'::text, 'unreliable_data'::text])))"
+        },
+        {
+          "name": "deviation_closed_by_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (closed_by) REFERENCES transport.app_user(id)"
+        },
+        {
+          "name": "deviation_connection_lost_duty_only",
+          "kind": "c",
+          "definition": "CHECK (((kind \u003c\u003e 'connection_lost'::text) OR (trip_id IS NULL)))"
+        },
+        {
+          "name": "deviation_duty_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (duty_id) REFERENCES transport.duty(id)"
+        },
+        {
+          "name": "deviation_kind_check",
+          "kind": "c",
+          "definition": "CHECK ((kind = ANY (ARRAY['late'::text, 'early'::text, 'off_route'::text, 'connection_lost'::text, 'failed'::text])))"
+        },
+        {
+          "name": "deviation_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (id)"
+        },
+        {
+          "name": "deviation_trip_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (trip_id) REFERENCES transport.execution(trip_id)"
+        },
+        {
+          "name": "deviation_trip_id_point_no_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (trip_id, point_no) REFERENCES transport.passage(trip_id, point_no)"
+        },
+        {
+          "name": "model_consistency",
+          "kind": "t",
+          "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+        }
+      ]
+    },
+    {
+      "name": "device",
+      "columns": [
+        {
+          "name": "id",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "vendor",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "message_format",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "active",
+          "type": "boolean",
+          "required": true,
+          "identity": "",
+          "default_value": "true"
+        }
+      ],
+      "constraints": [
+        {
+          "name": "device_id_check",
+          "kind": "c",
+          "definition": "CHECK ((btrim(id) \u003c\u003e ''::text))"
+        },
+        {
+          "name": "device_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (id)"
+        }
+      ]
+    },
+    {
+      "name": "device_installation",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint",
+          "required": true,
+          "identity": "a",
+          "default_value": null
+        },
+        {
+          "name": "device_id",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "vehicle_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "started_at",
+          "type": "timestamp with time zone",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "ended_at",
+          "type": "timestamp with time zone",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "created_by",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "reason",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "ended_by",
+          "type": "bigint",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "end_reason",
+          "type": "text",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        }
+      ],
+      "constraints": [
+        {
+          "name": "device_installation_check",
+          "kind": "c",
+          "definition": "CHECK (((ended_at IS NULL) OR (ended_at \u003e started_at)))"
+        },
+        {
+          "name": "device_installation_check1",
+          "kind": "c",
+          "definition": "CHECK ((((ended_at IS NULL) AND (ended_by IS NULL) AND (end_reason IS NULL)) OR ((ended_at IS NOT NULL) AND (ended_by IS NOT NULL) AND (btrim(end_reason) \u003c\u003e ''::text) AND (end_reason IS NOT NULL))))"
+        },
+        {
+          "name": "device_installation_created_by_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (created_by) REFERENCES transport.app_user(id)"
+        },
+        {
+          "name": "device_installation_device_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (device_id) REFERENCES transport.device(id)"
+        },
+        {
+          "name": "device_installation_device_id_tstzrange_excl",
+          "kind": "x",
+          "definition": "EXCLUDE USING gist (device_id WITH =, tstzrange(started_at, ended_at, '[)'::text) WITH \u0026\u0026)"
+        },
+        {
+          "name": "device_installation_ended_by_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (ended_by) REFERENCES transport.app_user(id)"
+        },
+        {
+          "name": "device_installation_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (id)"
+        },
+        {
+          "name": "device_installation_reason_check",
+          "kind": "c",
+          "definition": "CHECK ((btrim(reason) \u003c\u003e ''::text))"
+        },
+        {
+          "name": "device_installation_vehicle_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (vehicle_id) REFERENCES transport.vehicle(id)"
+        },
+        {
+          "name": "device_installation_vehicle_id_tstzrange_excl",
+          "kind": "x",
+          "definition": "EXCLUDE USING gist (vehicle_id WITH =, tstzrange(started_at, ended_at, '[)'::text) WITH \u0026\u0026)"
+        },
+        {
+          "name": "model_consistency",
+          "kind": "t",
+          "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+        }
+      ]
+    },
+    {
+      "name": "driver",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint",
+          "required": true,
+          "identity": "a",
+          "default_value": null
+        },
+        {
+          "name": "license_no",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "full_name",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "admitted_until",
+          "type": "date",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "active",
+          "type": "boolean",
+          "required": true,
+          "identity": "",
+          "default_value": "true"
+        }
+      ],
+      "constraints": [
+        {
+          "name": "driver_full_name_check",
+          "kind": "c",
+          "definition": "CHECK ((btrim(full_name) \u003c\u003e ''::text))"
+        },
+        {
+          "name": "driver_license_no_check",
+          "kind": "c",
+          "definition": "CHECK ((btrim(license_no) \u003c\u003e ''::text))"
+        },
+        {
+          "name": "driver_license_no_key",
+          "kind": "u",
+          "definition": "UNIQUE (license_no)"
+        },
+        {
+          "name": "driver_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (id)"
+        }
+      ]
+    },
+    {
+      "name": "duty",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint",
+          "required": true,
+          "identity": "a",
+          "default_value": null
+        },
+        {
+          "name": "number",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "service_date",
+          "type": "date",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "vehicle_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "driver_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": "'planned'::text"
+        },
+        {
+          "name": "plan_span",
+          "type": "tstzrange",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "released_at",
+          "type": "timestamp with time zone",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "closed_at",
+          "type": "timestamp with time zone",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "closed_by",
+          "type": "bigint",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "close_reason",
+          "type": "text",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "unchecked_results",
+          "type": "boolean",
+          "required": true,
+          "identity": "",
+          "default_value": "false"
+        }
+      ],
+      "constraints": [
+        {
+          "name": "duty_check",
+          "kind": "c",
+          "definition": "CHECK ((((status = 'planned'::text) AND (released_at IS NULL) AND (closed_at IS NULL)) OR ((status = 'on_line'::text) AND (released_at IS NOT NULL) AND (closed_at IS NULL)) OR ((status = 'closed'::text) AND (released_at IS NOT NULL) AND (closed_at IS NOT NULL) AND (closed_at \u003e= released_at)) OR ((status = 'cancelled'::text) AND (released_at IS NULL) AND (closed_at IS NOT NULL))))"
+        },
+        {
+          "name": "duty_check1",
+          "kind": "c",
+          "definition": "CHECK ((((closed_at IS NULL) AND (closed_by IS NULL) AND (close_reason IS NULL) AND (NOT unchecked_results)) OR ((closed_at IS NOT NULL) AND (closed_by IS NOT NULL) AND (close_reason IS NOT NULL) AND (btrim(close_reason) \u003c\u003e ''::text))))"
+        },
+        {
+          "name": "duty_closed_by_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (closed_by) REFERENCES transport.app_user(id)"
+        },
+        {
+          "name": "duty_driver_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (driver_id) REFERENCES transport.driver(id)"
+        },
+        {
+          "name": "duty_driver_id_plan_span_excl",
+          "kind": "x",
+          "definition": "EXCLUDE USING gist (driver_id WITH =, plan_span WITH \u0026\u0026) WHERE ((status = 'planned'::text))"
+        },
+        {
+          "name": "duty_number_key",
+          "kind": "u",
+          "definition": "UNIQUE (number)"
+        },
+        {
+          "name": "duty_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (id)"
+        },
+        {
+          "name": "duty_plan_span_check",
+          "kind": "c",
+          "definition": "CHECK (((plan_span IS NULL) OR ((NOT isempty(plan_span)) AND (NOT lower_inf(plan_span)) AND (NOT upper_inf(plan_span)) AND lower_inc(plan_span) AND (NOT upper_inc(plan_span)))))"
+        },
+        {
+          "name": "duty_status_check",
+          "kind": "c",
+          "definition": "CHECK ((status = ANY (ARRAY['planned'::text, 'on_line'::text, 'closed'::text, 'cancelled'::text])))"
+        },
+        {
+          "name": "duty_vehicle_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (vehicle_id) REFERENCES transport.vehicle(id)"
+        },
+        {
+          "name": "duty_vehicle_id_plan_span_excl",
+          "kind": "x",
+          "definition": "EXCLUDE USING gist (vehicle_id WITH =, plan_span WITH \u0026\u0026) WHERE ((status = 'planned'::text))"
+        },
+        {
+          "name": "model_consistency",
+          "kind": "t",
+          "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+        }
+      ]
+    },
+    {
+      "name": "execution",
+      "columns": [
+        {
+          "name": "trip_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": "'waiting'::text"
+        },
+        {
+          "name": "actual_start",
+          "type": "timestamp with time zone",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "actual_end",
+          "type": "timestamp with time zone",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "interrupted_at",
+          "type": "timestamp with time zone",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "completion_source",
+          "type": "text",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "next_point_no",
+          "type": "integer",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "review_due_at",
+          "type": "timestamp with time zone",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        }
+      ],
+      "constraints": [
+        {
+          "name": "execution_check",
+          "kind": "c",
+          "definition": "CHECK (((actual_end IS NULL) OR ((actual_start IS NOT NULL) AND (actual_end \u003e= actual_start))))"
+        },
+        {
+          "name": "execution_check1",
+          "kind": "c",
+          "definition": "CHECK (((interrupted_at IS NULL) OR ((actual_start IS NOT NULL) AND (interrupted_at \u003e= actual_start))))"
+        },
+        {
+          "name": "execution_check2",
+          "kind": "c",
+          "definition": "CHECK ((((status = 'done'::text) AND (actual_start IS NOT NULL) AND (actual_end IS NOT NULL) AND (completion_source IS NOT NULL)) OR ((status \u003c\u003e 'done'::text) AND (actual_end IS NULL) AND (completion_source IS NULL))))"
+        },
+        {
+          "name": "execution_check3",
+          "kind": "c",
+          "definition": "CHECK (((status \u003c\u003e 'waiting'::text) OR ((actual_start IS NULL) AND (interrupted_at IS NULL))))"
+        },
+        {
+          "name": "execution_check4",
+          "kind": "c",
+          "definition": "CHECK (((status \u003c\u003e 'running'::text) OR ((actual_start IS NOT NULL) AND (next_point_no IS NOT NULL))))"
+        },
+        {
+          "name": "execution_check5",
+          "kind": "c",
+          "definition": "CHECK (((status = 'failed'::text) OR (interrupted_at IS NULL)))"
+        },
+        {
+          "name": "execution_check6",
+          "kind": "c",
+          "definition": "CHECK (((status \u003c\u003e 'failed'::text) OR ((actual_start IS NULL) = (interrupted_at IS NULL))))"
+        },
+        {
+          "name": "execution_completion_source_check",
+          "kind": "c",
+          "definition": "CHECK ((completion_source = ANY (ARRAY['telemetry'::text, 'dispatcher'::text])))"
+        },
+        {
+          "name": "execution_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (trip_id)"
+        },
+        {
+          "name": "execution_status_check",
+          "kind": "c",
+          "definition": "CHECK ((status = ANY (ARRAY['waiting'::text, 'running'::text, 'review'::text, 'done'::text, 'failed'::text])))"
+        },
+        {
+          "name": "execution_trip_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (trip_id) REFERENCES transport.planned_trip(id)"
+        },
+        {
+          "name": "execution_trip_id_next_point_no_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (trip_id, next_point_no) REFERENCES transport.trip_point(trip_id, point_no)"
+        },
+        {
+          "name": "model_consistency",
+          "kind": "t",
+          "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+        }
+      ]
+    },
+    {
+      "name": "message_key",
+      "columns": [
+        {
+          "name": "device_id",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "message_id",
+          "type": "uuid",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "content_sha256",
+          "type": "bytea",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "first_received_at",
+          "type": "timestamp with time zone",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "generated_at",
+          "type": "timestamp with time zone",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "installation_id",
+          "type": "bigint",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "first_receipt_id",
+          "type": "uuid",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "result",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        }
+      ],
+      "constraints": [
+        {
+          "name": "message_key_content_sha256_check",
+          "kind": "c",
+          "definition": "CHECK ((octet_length(content_sha256) = 32))"
+        },
+        {
+          "name": "message_key_device_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (device_id) REFERENCES transport.device(id)"
+        },
+        {
+          "name": "message_key_first_receipt_id_key",
+          "kind": "u",
+          "definition": "UNIQUE (first_receipt_id)"
+        },
+        {
+          "name": "message_key_installation_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (installation_id) REFERENCES transport.device_installation(id)"
+        },
+        {
+          "name": "message_key_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (device_id, message_id)"
+        },
+        {
+          "name": "message_key_result_check",
+          "kind": "c",
+          "definition": "CHECK ((result = ANY (ARRAY['accepted'::text, 'invalid'::text, 'stale'::text])))"
+        },
+        {
+          "name": "model_consistency",
+          "kind": "t",
+          "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+        }
+      ]
+    },
+    {
+      "name": "operation_request",
+      "columns": [
+        {
+          "name": "request_id",
+          "type": "uuid",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "operation",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "arguments",
+          "type": "jsonb",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "actor_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "applied_at",
+          "type": "timestamp with time zone",
+          "required": true,
+          "identity": "",
+          "default_value": "CURRENT_TIMESTAMP"
+        }
+      ],
+      "constraints": [
+        {
+          "name": "operation_request_actor_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (actor_id) REFERENCES transport.app_user(id)"
+        },
+        {
+          "name": "operation_request_operation_check",
+          "kind": "c",
+          "definition": "CHECK ((operation = ANY (ARRAY['create_trip'::text, 'assign_trip'::text, 'unassign_trip'::text, 'refresh_plan'::text, 'release_duty'::text, 'close_duty'::text, 'cancel_duty'::text, 'replace_duty'::text, 'decide_trip'::text, 'close_deviation'::text])))"
+        },
+        {
+          "name": "operation_request_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (request_id)"
+        }
+      ]
+    },
+    {
+      "name": "passage",
+      "columns": [
+        {
+          "name": "trip_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "point_no",
+          "type": "integer",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "arrived_at",
+          "type": "timestamp with time zone",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "source_device_id",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "source_message_id",
+          "type": "uuid",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "evidence",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        }
+      ],
+      "constraints": [
+        {
+          "name": "model_consistency",
+          "kind": "t",
+          "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+        },
+        {
+          "name": "passage_evidence_check",
+          "kind": "c",
+          "definition": "CHECK ((btrim(evidence) \u003c\u003e ''::text))"
+        },
+        {
+          "name": "passage_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (trip_id, point_no)"
+        },
+        {
+          "name": "passage_source_device_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (source_device_id) REFERENCES transport.device(id)"
+        },
+        {
+          "name": "passage_source_device_id_source_message_id_key",
+          "kind": "u",
+          "definition": "UNIQUE (source_device_id, source_message_id)"
+        },
+        {
+          "name": "passage_trip_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (trip_id) REFERENCES transport.execution(trip_id)"
+        },
+        {
+          "name": "passage_trip_id_point_no_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (trip_id, point_no) REFERENCES transport.trip_point(trip_id, point_no)"
+        }
+      ]
+    },
+    {
+      "name": "passage_correction",
+      "columns": [
+        {
+          "name": "trip_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "point_no",
+          "type": "integer",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "correction_no",
+          "type": "integer",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "corrected_at",
+          "type": "timestamp with time zone",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "author_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "reliable",
+          "type": "boolean",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "reason",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        }
+      ],
+      "constraints": [
+        {
+          "name": "model_consistency",
+          "kind": "t",
+          "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+        },
+        {
+          "name": "passage_correction_author_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (author_id) REFERENCES transport.app_user(id)"
+        },
+        {
+          "name": "passage_correction_correction_no_check",
+          "kind": "c",
+          "definition": "CHECK ((correction_no \u003e 0))"
+        },
+        {
+          "name": "passage_correction_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (trip_id, point_no, correction_no)"
+        },
+        {
+          "name": "passage_correction_reason_check",
+          "kind": "c",
+          "definition": "CHECK ((btrim(reason) \u003c\u003e ''::text))"
+        },
+        {
+          "name": "passage_correction_trip_id_point_no_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (trip_id, point_no) REFERENCES transport.passage(trip_id, point_no)"
+        }
+      ]
+    },
+    {
+      "name": "planned_trip",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint",
+          "required": true,
+          "identity": "a",
+          "default_value": null
+        },
+        {
+          "name": "route_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "starts_at",
+          "type": "timestamp with time zone",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "path_snapshot",
+          "type": "path",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "copied_at",
+          "type": "timestamp with time zone",
+          "required": true,
+          "identity": "",
+          "default_value": "CURRENT_TIMESTAMP"
+        },
+        {
+          "name": "refreshed_at",
+          "type": "timestamp with time zone",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "refreshed_by",
+          "type": "bigint",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "refresh_reason",
+          "type": "text",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "frozen_at",
+          "type": "timestamp with time zone",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        }
+      ],
+      "constraints": [
+        {
+          "name": "model_consistency",
+          "kind": "t",
+          "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+        },
+        {
+          "name": "planned_trip_check",
+          "kind": "c",
+          "definition": "CHECK ((((refreshed_at IS NULL) AND (refreshed_by IS NULL) AND (refresh_reason IS NULL)) OR ((refreshed_at IS NOT NULL) AND (refreshed_by IS NOT NULL) AND (refresh_reason IS NOT NULL) AND (btrim(refresh_reason) \u003c\u003e ''::text))))"
+        },
+        {
+          "name": "planned_trip_path_snapshot_check",
+          "kind": "c",
+          "definition": "CHECK ((npoints(path_snapshot) \u003e= 2))"
+        },
+        {
+          "name": "planned_trip_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (id)"
+        },
+        {
+          "name": "planned_trip_refreshed_by_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (refreshed_by) REFERENCES transport.app_user(id)"
+        },
+        {
+          "name": "planned_trip_route_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (route_id) REFERENCES transport.route(id)"
+        },
+        {
+          "name": "planned_trip_route_id_starts_at_key",
+          "kind": "u",
+          "definition": "UNIQUE (route_id, starts_at)"
+        }
+      ]
+    },
+    {
+      "name": "planning_guard",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        }
+      ],
+      "constraints": [
+        {
+          "name": "planning_guard_id_check",
+          "kind": "c",
+          "definition": "CHECK ((id = 1))"
+        },
+        {
+          "name": "planning_guard_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (id)"
+        }
+      ]
+    },
+    {
+      "name": "role",
+      "columns": [
+        {
+          "name": "code",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        }
+      ],
+      "constraints": [
+        {
+          "name": "role_code_check",
+          "kind": "c",
+          "definition": "CHECK ((code = ANY (ARRAY['admin'::text, 'dispatcher'::text, 'driver'::text, 'analyst'::text])))"
+        },
+        {
+          "name": "role_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (code)"
+        }
+      ]
+    },
+    {
+      "name": "route",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint",
+          "required": true,
+          "identity": "a",
+          "default_value": null
+        },
+        {
+          "name": "number",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "direction",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "transport_kind",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "path",
+          "type": "path",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "active",
+          "type": "boolean",
+          "required": true,
+          "identity": "",
+          "default_value": "true"
+        }
+      ],
+      "constraints": [
+        {
+          "name": "model_consistency",
+          "kind": "t",
+          "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+        },
+        {
+          "name": "route_direction_check",
+          "kind": "c",
+          "definition": "CHECK ((btrim(direction) \u003c\u003e ''::text))"
+        },
+        {
+          "name": "route_number_check",
+          "kind": "c",
+          "definition": "CHECK ((btrim(number) \u003c\u003e ''::text))"
+        },
+        {
+          "name": "route_number_direction_key",
+          "kind": "u",
+          "definition": "UNIQUE (number, direction)"
+        },
+        {
+          "name": "route_path_check",
+          "kind": "c",
+          "definition": "CHECK ((npoints(path) \u003e= 2))"
+        },
+        {
+          "name": "route_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (id)"
+        },
+        {
+          "name": "route_transport_kind_check",
+          "kind": "c",
+          "definition": "CHECK ((transport_kind = ANY (ARRAY['bus'::text, 'tram'::text, 'trolleybus'::text])))"
+        }
+      ]
+    },
+    {
+      "name": "route_point",
+      "columns": [
+        {
+          "name": "route_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "point_no",
+          "type": "integer",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "stop_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "offset_seconds",
+          "type": "integer",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        }
+      ],
+      "constraints": [
+        {
+          "name": "model_consistency",
+          "kind": "t",
+          "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+        },
+        {
+          "name": "route_point_offset_seconds_check",
+          "kind": "c",
+          "definition": "CHECK ((offset_seconds \u003e= 0))"
+        },
+        {
+          "name": "route_point_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (route_id, point_no)"
+        },
+        {
+          "name": "route_point_point_no_check",
+          "kind": "c",
+          "definition": "CHECK ((point_no \u003e 0))"
+        },
+        {
+          "name": "route_point_route_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (route_id) REFERENCES transport.route(id)"
+        },
+        {
+          "name": "route_point_stop_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (stop_id) REFERENCES transport.stop(id)"
+        }
+      ]
+    },
+    {
+      "name": "stop",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint",
+          "required": true,
+          "identity": "a",
+          "default_value": null
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "latitude",
+          "type": "numeric(9,6)",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "longitude",
+          "type": "numeric(9,6)",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "active",
+          "type": "boolean",
+          "required": true,
+          "identity": "",
+          "default_value": "true"
+        }
+      ],
+      "constraints": [
+        {
+          "name": "stop_latitude_check",
+          "kind": "c",
+          "definition": "CHECK (((latitude \u003e= ('-90'::integer)::numeric) AND (latitude \u003c= (90)::numeric)))"
+        },
+        {
+          "name": "stop_longitude_check",
+          "kind": "c",
+          "definition": "CHECK (((longitude \u003e= ('-180'::integer)::numeric) AND (longitude \u003c= (180)::numeric)))"
+        },
+        {
+          "name": "stop_name_check",
+          "kind": "c",
+          "definition": "CHECK ((btrim(name) \u003c\u003e ''::text))"
+        },
+        {
+          "name": "stop_name_latitude_longitude_key",
+          "kind": "u",
+          "definition": "UNIQUE (name, latitude, longitude)"
+        },
+        {
+          "name": "stop_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (id)"
+        }
+      ]
+    },
+    {
+      "name": "trip_decision",
+      "columns": [
+        {
+          "name": "trip_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "decision_no",
+          "type": "integer",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "author_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "decided_at",
+          "type": "timestamp with time zone",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "outcome",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "reason",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "status_before",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "status_after",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "confirmed_start",
+          "type": "timestamp with time zone",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "confirmed_end",
+          "type": "timestamp with time zone",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "interrupted_at",
+          "type": "timestamp with time zone",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "next_point_no",
+          "type": "integer",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "review_due_at",
+          "type": "timestamp with time zone",
+          "required": false,
+          "identity": "",
+          "default_value": null
+        }
+      ],
+      "constraints": [
+        {
+          "name": "model_consistency",
+          "kind": "t",
+          "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+        },
+        {
+          "name": "trip_decision_author_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (author_id) REFERENCES transport.app_user(id)"
+        },
+        {
+          "name": "trip_decision_check",
+          "kind": "c",
+          "definition": "CHECK (((confirmed_start IS NULL) OR (confirmed_start \u003c= decided_at)))"
+        },
+        {
+          "name": "trip_decision_check1",
+          "kind": "c",
+          "definition": "CHECK (((confirmed_end IS NULL) OR ((confirmed_start IS NOT NULL) AND ((confirmed_end \u003e= confirmed_start) AND (confirmed_end \u003c= decided_at)))))"
+        },
+        {
+          "name": "trip_decision_check2",
+          "kind": "c",
+          "definition": "CHECK (((interrupted_at IS NULL) OR ((confirmed_start IS NOT NULL) AND ((interrupted_at \u003e= confirmed_start) AND (interrupted_at \u003c= decided_at)))))"
+        },
+        {
+          "name": "trip_decision_check3",
+          "kind": "c",
+          "definition": "CHECK ((((outcome = 'insufficient'::text) AND (status_before = 'review'::text) AND (status_after = 'review'::text) AND (confirmed_start IS NULL) AND (confirmed_end IS NULL) AND (interrupted_at IS NULL) AND (next_point_no IS NULL) AND (review_due_at IS NULL)) OR ((outcome = 'complete'::text) AND (status_before = 'review'::text) AND (status_after = 'done'::text) AND (confirmed_start IS NOT NULL) AND (confirmed_end IS NOT NULL) AND (interrupted_at IS NULL) AND (next_point_no IS NULL) AND (review_due_at IS NULL)) OR ((outcome = 'continue'::text) AND (status_before = 'review'::text) AND (status_after = 'running'::text) AND (confirmed_start IS NOT NULL) AND (confirmed_end IS NULL) AND (interrupted_at IS NULL) AND (next_point_no IS NOT NULL) AND (review_due_at IS NOT NULL) AND (review_due_at \u003e decided_at)) OR ((outcome = 'fail'::text) AND (status_after = 'failed'::text) AND (confirmed_end IS NULL) AND (next_point_no IS NULL) AND (review_due_at IS NULL) AND ((confirmed_start IS NULL) = (interrupted_at IS NULL)))))"
+        },
+        {
+          "name": "trip_decision_decision_no_check",
+          "kind": "c",
+          "definition": "CHECK ((decision_no \u003e 0))"
+        },
+        {
+          "name": "trip_decision_outcome_check",
+          "kind": "c",
+          "definition": "CHECK ((outcome = ANY (ARRAY['continue'::text, 'complete'::text, 'fail'::text, 'insufficient'::text])))"
+        },
+        {
+          "name": "trip_decision_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (trip_id, decision_no)"
+        },
+        {
+          "name": "trip_decision_reason_check",
+          "kind": "c",
+          "definition": "CHECK ((btrim(reason) \u003c\u003e ''::text))"
+        },
+        {
+          "name": "trip_decision_status_after_check",
+          "kind": "c",
+          "definition": "CHECK ((status_after = ANY (ARRAY['running'::text, 'review'::text, 'done'::text, 'failed'::text])))"
+        },
+        {
+          "name": "trip_decision_status_before_check",
+          "kind": "c",
+          "definition": "CHECK ((status_before = ANY (ARRAY['waiting'::text, 'running'::text, 'review'::text])))"
+        },
+        {
+          "name": "trip_decision_trip_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (trip_id) REFERENCES transport.execution(trip_id)"
+        },
+        {
+          "name": "trip_decision_trip_id_next_point_no_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (trip_id, next_point_no) REFERENCES transport.trip_point(trip_id, point_no)"
+        }
+      ]
+    },
+    {
+      "name": "trip_point",
+      "columns": [
+        {
+          "name": "trip_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "point_no",
+          "type": "integer",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "stop_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "arrives_at",
+          "type": "timestamp with time zone",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "stop_name_snapshot",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "latitude_snapshot",
+          "type": "numeric(9,6)",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "longitude_snapshot",
+          "type": "numeric(9,6)",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        }
+      ],
+      "constraints": [
+        {
+          "name": "model_consistency",
+          "kind": "t",
+          "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+        },
+        {
+          "name": "trip_point_latitude_snapshot_check",
+          "kind": "c",
+          "definition": "CHECK (((latitude_snapshot \u003e= ('-90'::integer)::numeric) AND (latitude_snapshot \u003c= (90)::numeric)))"
+        },
+        {
+          "name": "trip_point_longitude_snapshot_check",
+          "kind": "c",
+          "definition": "CHECK (((longitude_snapshot \u003e= ('-180'::integer)::numeric) AND (longitude_snapshot \u003c= (180)::numeric)))"
+        },
+        {
+          "name": "trip_point_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (trip_id, point_no)"
+        },
+        {
+          "name": "trip_point_point_no_check",
+          "kind": "c",
+          "definition": "CHECK ((point_no \u003e 0))"
+        },
+        {
+          "name": "trip_point_stop_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (stop_id) REFERENCES transport.stop(id)"
+        },
+        {
+          "name": "trip_point_trip_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (trip_id) REFERENCES transport.planned_trip(id)"
+        }
+      ]
+    },
+    {
+      "name": "user_role",
+      "columns": [
+        {
+          "name": "user_id",
+          "type": "bigint",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "role_code",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        }
+      ],
+      "constraints": [
+        {
+          "name": "model_consistency",
+          "kind": "t",
+          "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+        },
+        {
+          "name": "user_role_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (user_id, role_code)"
+        },
+        {
+          "name": "user_role_role_code_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (role_code) REFERENCES transport.role(code)"
+        },
+        {
+          "name": "user_role_user_id_fkey",
+          "kind": "f",
+          "definition": "FOREIGN KEY (user_id) REFERENCES transport.app_user(id)"
+        }
+      ]
+    },
+    {
+      "name": "vehicle",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint",
+          "required": true,
+          "identity": "a",
+          "default_value": null
+        },
+        {
+          "name": "registration_no",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "transport_kind",
+          "type": "text",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "capacity",
+          "type": "integer",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "admitted_until",
+          "type": "date",
+          "required": true,
+          "identity": "",
+          "default_value": null
+        },
+        {
+          "name": "active",
+          "type": "boolean",
+          "required": true,
+          "identity": "",
+          "default_value": "true"
+        }
+      ],
+      "constraints": [
+        {
+          "name": "model_consistency",
+          "kind": "t",
+          "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+        },
+        {
+          "name": "vehicle_capacity_check",
+          "kind": "c",
+          "definition": "CHECK ((capacity \u003e 0))"
+        },
+        {
+          "name": "vehicle_pkey",
+          "kind": "p",
+          "definition": "PRIMARY KEY (id)"
+        },
+        {
+          "name": "vehicle_registration_no_check",
+          "kind": "c",
+          "definition": "CHECK ((btrim(registration_no) \u003c\u003e ''::text))"
+        },
+        {
+          "name": "vehicle_registration_no_key",
+          "kind": "u",
+          "definition": "UNIQUE (registration_no)"
+        },
+        {
+          "name": "vehicle_transport_kind_check",
+          "kind": "c",
+          "definition": "CHECK ((transport_kind = ANY (ARRAY['bus'::text, 'tram'::text, 'trolleybus'::text])))"
+        }
+      ]
+    }
+  ]
+}

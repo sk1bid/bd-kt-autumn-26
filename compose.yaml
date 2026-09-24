@@ -1,0 +1,18 @@
+name: transport-kt02
+services:
+  db:
+    image: postgres:17-alpine
+    profiles: [dev, test]
+    environment:
+      POSTGRES_USER: kt02
+      POSTGRES_PASSWORD: kt02_local_demo
+      POSTGRES_DB: transport
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U kt02 -d transport']
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    volumes:
+      - kt02_pgdata:/var/lib/postgresql/data
+volumes:
+  kt02_pgdata:

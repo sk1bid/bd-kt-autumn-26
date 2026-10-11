@@ -1,0 +1,229 @@
+{
+  "business_constraints": "PASS",
+  "business_rule_checks": {
+    "telemetry_after_unresolved_review": 0,
+    "telemetry_start_outside_window": 0
+  },
+  "constraints_and_triggers_enabled": true,
+  "distributions": {
+    "database_bytes": 36681395,
+    "device_frequency": {
+      "device-001": 25213,
+      "device-002": 25055,
+      "device-003": 1370,
+      "device-004": 1504,
+      "device-005": 1397,
+      "device-006": 1361,
+      "device-007": 1364,
+      "device-008": 1337,
+      "device-009": 1483,
+      "device-010": 1237,
+      "device-011": 1279,
+      "device-012": 1373,
+      "device-013": 1353,
+      "device-014": 1437,
+      "device-015": 1423,
+      "device-016": 1380,
+      "device-017": 1417,
+      "device-018": 1273,
+      "device-019": 1401,
+      "device-020": 1343
+    },
+    "duties": {
+      "cancelled": 2,
+      "closed": 120,
+      "on_line": 16,
+      "planned": 2
+    },
+    "executions": {
+      "done": 348,
+      "failed": 42,
+      "review": 130,
+      "running": 8,
+      "waiting": 16
+    },
+    "message_dates": {
+      "2026-10-05": 10824,
+      "2026-10-06": 10711,
+      "2026-10-07": 10881,
+      "2026-10-08": 10558,
+      "2026-10-09": 10957,
+      "2026-10-10": 10616,
+      "2026-10-11": 10453
+    },
+    "message_results": {
+      "accepted": 68965,
+      "invalid": 3812,
+      "stale": 2223
+    },
+    "messages": 75000,
+    "pending_checks": 0,
+    "routes": {
+      "1": 224,
+      "10": 16,
+      "11": 24,
+      "12": 20,
+      "2": 160,
+      "3": 8,
+      "4": 32,
+      "5": 28,
+      "6": 12,
+      "7": 12,
+      "9": 24
+    },
+    "table_sizes": {
+      "app_user": 65536,
+      "assignment": 229376,
+      "connection_state": 24576,
+      "current_position": 8192,
+      "deviation": 581632,
+      "device": 32768,
+      "device_installation": 49152,
+      "driver": 49152,
+      "duty": 139264,
+      "execution": 122880,
+      "message_key": 21028864,
+      "operation_request": 16384,
+      "passage": 2342912,
+      "passage_correction": 32768,
+      "planned_trip": 319488,
+      "planning_guard": 24576,
+      "role": 32768,
+      "route": 49152,
+      "route_point": 57344,
+      "stop": 49152,
+      "trip_decision": 65536,
+      "trip_point": 2080768,
+      "user_role": 32768,
+      "vehicle": 49152
+    }
+  },
+  "facts_not_after_anchor": true,
+  "manifest": {
+    "generator_version": 2,
+    "seed": 20261011,
+    "mode": "dev",
+    "anchor": "2026-10-11T13:30:00+07:00",
+    "days": 7,
+    "vehicles": 20,
+    "tables": [
+      {
+        "table": "driver",
+        "columns": "id,license_no,full_name,admitted_until",
+        "rows": 20,
+        "sha256": "0df4ca3ea6ec25711b2a1e1aa6dac224525c47f3318fad1607bb798c4a9bd47d"
+      },
+      {
+        "table": "app_user",
+        "columns": "id,login,full_name",
+        "rows": 3,
+        "sha256": "5bf21cc965bdf19c8fa324f3ea4f44916791a7c91b2a7ff98ffe415586bcf42e"
+      },
+      {
+        "table": "user_role",
+        "columns": "user_id,role_code",
+        "rows": 3,
+        "sha256": "0708fb32fc905c906878b412e8e5498f931d509c6a1b42e4e8537cd3982d3481"
+      },
+      {
+        "table": "stop",
+        "columns": "id,name,latitude,longitude",
+        "rows": 20,
+        "sha256": "28f52fecfd03ff8d06f7a95416623dfede9b4c79bfbd487b2957db75854ddcda"
+      },
+      {
+        "table": "route",
+        "columns": "id,number,direction,name,transport_kind,path",
+        "rows": 12,
+        "sha256": "d00a3ede10019d75d4f8733c8ac4c2d97d97eb6e6020e1483c79eb9e061ae0a2"
+      },
+      {
+        "table": "route_point",
+        "columns": "route_id,point_no,stop_id,offset_seconds",
+        "rows": 240,
+        "sha256": "c327a40eef735bb8fc65c591c3dff2f36b873b2cb4fca3004eb7d936bddb78c2"
+      },
+      {
+        "table": "vehicle",
+        "columns": "id,registration_no,transport_kind,capacity,admitted_until",
+        "rows": 20,
+        "sha256": "d72ad97a709bdda27ecb685e3a79ba95180d404de007311fa8f9a41a6ed719c5"
+      },
+      {
+        "table": "device",
+        "columns": "id,vendor,message_format",
+        "rows": 20,
+        "sha256": "1494164c62c8f996082e42e64d4d23064f267ab471da5d1861d5af8eba11168e"
+      },
+      {
+        "table": "device_installation",
+        "columns": "id,device_id,vehicle_id,started_at,created_by,reason",
+        "rows": 20,
+        "sha256": "46b4a6e660ebc3a0ae4aaa416ab2efaa9aa050ffa1f79fe24c5bd3f1f0109e93"
+      },
+      {
+        "table": "planned_trip",
+        "columns": "id,route_id,starts_at,path_snapshot,copied_at",
+        "rows": 560,
+        "sha256": "04472b08d69d2bcad083f07b1bf71d634296b09f69f8e5aa7e3c17fd3f1bd65f"
+      },
+      {
+        "table": "trip_point",
+        "columns": "trip_id,point_no,stop_id,arrives_at,stop_name_snapshot,latitude_snapshot,longitude_snapshot",
+        "rows": 11200,
+        "sha256": "f4f60121bbf051d1b3e22e6f99cc52a0f527807b2cde4b97c11be89867be3719"
+      },
+      {
+        "table": "duty",
+        "columns": "id,number,service_date,vehicle_id,driver_id,status,released_at,closed_at,closed_by,close_reason,unchecked_results",
+        "rows": 140,
+        "sha256": "2d2914cb50e6c149ab9ade03522a19ab45ce8862c09441fbf8c557d4c3c599fc"
+      },
+      {
+        "table": "assignment",
+        "columns": "id,trip_id,duty_id,started_at,created_by,reason",
+        "rows": 552,
+        "sha256": "929fba0ca5d0235869fbde43cc5a8580c02af63d34e11d3095490c167ef7e234"
+      },
+      {
+        "table": "execution",
+        "columns": "trip_id,status,actual_start,actual_end,completion_source,next_point_no,review_due_at",
+        "rows": 544,
+        "sha256": "95296d475e4b66f86138e7fe942f0e49dc82ffaea1abac99c6c306c10d28fa63"
+      },
+      {
+        "table": "trip_decision",
+        "columns": "trip_id,decision_no,author_id,decided_at,outcome,reason,status_before,status_after,confirmed_start,confirmed_end",
+        "rows": 60,
+        "sha256": "2410d496e5f45612c4fdf23f4137957cc6aab9156da3949962da88970aaa01b6"
+      },
+      {
+        "table": "passage",
+        "columns": "trip_id,point_no,arrived_at,source_device_id,source_message_id,evidence",
+        "rows": 6672,
+        "sha256": "7e41ab223966d46b4885ea4649a26579c4ebc3e5560ec2853a10169fb7835e7b"
+      },
+      {
+        "table": "passage_correction",
+        "columns": "trip_id,point_no,correction_no,corrected_at,author_id,reliable,reason",
+        "rows": 41,
+        "sha256": "b30893d535f5b5935cb89be3c44971e3b60ced648c800b9f9adb50c345898c17"
+      },
+      {
+        "table": "deviation",
+        "columns": "id,duty_id,trip_id,point_no,kind,detected_at,measured_value,closed_at,closed_by,close_reason,comment",
+        "rows": 1726,
+        "sha256": "04e17d2659e6c82908429a9183c7005ce42f19e7278fea96e8c866a35bf0d625"
+      },
+      {
+        "table": "message_key",
+        "columns": "device_id,message_id,content_sha256,first_received_at,generated_at,installation_id,first_receipt_id,result",
+        "rows": 75000,
+        "sha256": "c5429db8810f5960d77139b2c452eba82c90080ebd8ca06a266f3401da20845c"
+      }
+    ]
+  },
+  "passages_have_accepted_messages": true,
+  "row_counts_match_manifest": true,
+  "status": "PASS"
+}

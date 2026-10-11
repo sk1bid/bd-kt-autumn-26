@@ -1,0 +1,38 @@
+[
+  {
+    "version": 4,
+    "rows": 200,
+    "wall_ms": 142.894,
+    "server_timings": "Time: 0.032 ms\nTime: 4.523 ms\nTime: 57.425 ms\n"
+  },
+  {
+    "version": 4,
+    "rows": 1000,
+    "wall_ms": 582.246,
+    "server_timings": "Time: 0.041 ms\nTime: 14.578 ms\nTime: 474.086 ms\n"
+  },
+  {
+    "version": 4,
+    "rows": 2000,
+    "wall_ms": 1862.405,
+    "server_timings": "Time: 0.039 ms\nTime: 30.795 ms\nTime: 1732.678 ms (00:01.733)\n"
+  },
+  {
+    "version": 5,
+    "rows": 200,
+    "wall_ms": 97.514,
+    "server_timings": "Time: 0.037 ms\nTime: 5.147 ms\nTime: 9.242 ms\n"
+  },
+  {
+    "version": 5,
+    "rows": 1000,
+    "wall_ms": 105.598,
+    "server_timings": "Time: 0.030 ms\nTime: 16.669 ms\nTime: 8.222 ms\n"
+  },
+  {
+    "version": 5,
+    "rows": 2000,
+    "wall_ms": 126.213,
+    "server_timings": "Time: 0.040 ms\nTime: 27.267 ms\nTime: 7.653 ms\n"
+  }
+]

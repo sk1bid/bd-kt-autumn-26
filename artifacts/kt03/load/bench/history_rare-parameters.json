@@ -1,0 +1,7 @@
+{
+  "device_id": "device-100",
+  "limit": "20",
+  "min_late": "20",
+  "period_end": "2026-10-12T00:00:00+07:00",
+  "period_start": "2026-09-12T00:00:00+07:00"
+}

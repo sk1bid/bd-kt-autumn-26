@@ -1,0 +1,474 @@
+[
+  {
+    "pid": 17057,
+    "locks": [
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "driver",
+        "transactionid": null
+      },
+      {
+        "mode": "RowShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "one_driver_on_line",
+        "transactionid": null
+      },
+      {
+        "mode": "RowShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "one_vehicle_on_line",
+        "transactionid": null
+      },
+      {
+        "mode": "RowShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "duty_driver_id_plan_span_excl",
+        "transactionid": null
+      },
+      {
+        "mode": "RowShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "duty_vehicle_id_plan_span_excl",
+        "transactionid": null
+      },
+      {
+        "mode": "RowShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "duty_number_key",
+        "transactionid": null
+      },
+      {
+        "mode": "RowShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "duty_pkey",
+        "transactionid": null
+      },
+      {
+        "mode": "RowShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "duty",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "user_role_pkey",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "app_user_driver_id_key",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "app_user_login_key",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "app_user_pkey",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "user_role",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "app_user",
+        "transactionid": null
+      },
+      {
+        "mode": "RowShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "planning_guard_pkey",
+        "transactionid": null
+      },
+      {
+        "mode": "RowShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "planning_guard",
+        "transactionid": null
+      },
+      {
+        "mode": "ExclusiveLock",
+        "granted": true,
+        "locktype": "virtualxid",
+        "relation": null,
+        "transactionid": null
+      },
+      {
+        "mode": "RowShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "planned_trip_route_id_starts_at_key",
+        "transactionid": null
+      },
+      {
+        "mode": "RowExclusiveLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "planned_trip_route_id_starts_at_key",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "driver_license_no_key",
+        "transactionid": null
+      },
+      {
+        "mode": "RowExclusiveLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "duty_driver_id_plan_span_excl",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "execution",
+        "transactionid": null
+      },
+      {
+        "mode": "RowExclusiveLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "execution",
+        "transactionid": null
+      },
+      {
+        "mode": "RowShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "trip_period",
+        "transactionid": null
+      },
+      {
+        "mode": "RowExclusiveLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "trip_period",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "one_current_assignment",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "driver_pkey",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "device_pkey",
+        "transactionid": null
+      },
+      {
+        "mode": "RowExclusiveLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "duty_number_key",
+        "transactionid": null
+      },
+      {
+        "mode": "RowExclusiveLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "duty_vehicle_id_plan_span_excl",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "assignment",
+        "transactionid": null
+      },
+      {
+        "mode": "RowShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "trip_point_pkey",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "execution_review_due",
+        "transactionid": null
+      },
+      {
+        "mode": "RowExclusiveLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "execution_review_due",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "device_installation_vehicle_id_tstzrange_excl",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "device_installation_device_id_tstzrange_excl",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "device_installation",
+        "transactionid": null
+      },
+      {
+        "mode": "RowShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "planned_trip_pkey",
+        "transactionid": null
+      },
+      {
+        "mode": "RowExclusiveLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "planned_trip_pkey",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "device_installation_pkey",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "execution_pkey",
+        "transactionid": null
+      },
+      {
+        "mode": "RowExclusiveLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "execution_pkey",
+        "transactionid": null
+      },
+      {
+        "mode": "RowExclusiveLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "one_driver_on_line",
+        "transactionid": null
+      },
+      {
+        "mode": "RowShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "trip_point_stop",
+        "transactionid": null
+      },
+      {
+        "mode": "RowExclusiveLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "duty",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "assignment_trip_id_tstzrange_excl",
+        "transactionid": null
+      },
+      {
+        "mode": "RowShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "trip_point",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "device",
+        "transactionid": null
+      },
+      {
+        "mode": "RowShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "planned_trip",
+        "transactionid": null
+      },
+      {
+        "mode": "RowExclusiveLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "planned_trip",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "vehicle",
+        "transactionid": null
+      },
+      {
+        "mode": "RowExclusiveLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "transport_private.model_check_queue",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "assignment_pkey",
+        "transactionid": null
+      },
+      {
+        "mode": "ExclusiveLock",
+        "granted": true,
+        "locktype": "transactionid",
+        "relation": null,
+        "transactionid": "5214"
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "vehicle_registration_no_key",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "vehicle_pkey",
+        "transactionid": null
+      },
+      {
+        "mode": "RowExclusiveLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "duty_pkey",
+        "transactionid": null
+      },
+      {
+        "mode": "RowExclusiveLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "one_vehicle_on_line",
+        "transactionid": null
+      },
+      {
+        "mode": "AccessShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "assignment_duty",
+        "transactionid": null
+      }
+    ],
+    "query": "SELECT release_duty(1,2,'2026-09-22 09:50+07');",
+    "state": "idle in transaction",
+    "wait_event": "ClientRead",
+    "application": "kt03_first",
+    "blocking_pids": [],
+    "wait_event_type": "Client"
+  },
+  {
+    "pid": 17078,
+    "locks": [
+      {
+        "mode": "RowShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "planning_guard_pkey",
+        "transactionid": null
+      },
+      {
+        "mode": "RowShareLock",
+        "granted": true,
+        "locktype": "relation",
+        "relation": "planning_guard",
+        "transactionid": null
+      },
+      {
+        "mode": "ExclusiveLock",
+        "granted": true,
+        "locktype": "virtualxid",
+        "relation": null,
+        "transactionid": null
+      },
+      {
+        "mode": "ShareLock",
+        "granted": false,
+        "locktype": "transactionid",
+        "relation": null,
+        "transactionid": "5214"
+      },
+      {
+        "mode": "AccessExclusiveLock",
+        "granted": true,
+        "locktype": "tuple",
+        "relation": "planning_guard",
+        "transactionid": null
+      }
+    ],
+    "query": "SELECT release_duty(3,2,'2026-09-22 09:50+07');",
+    "state": "active",
+    "wait_event": "transactionid",
+    "application": "kt03_second",
+    "blocking_pids": [
+      17057
+    ],
+    "wait_event_type": "Lock"
+  }
+]

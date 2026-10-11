@@ -1,0 +1,8 @@
+ERROR:  23505: duplicate key value violates unique constraint "one_vehicle_on_line"
+DETAIL:  Key (vehicle_id)=(1) already exists.
+CONTEXT:  SQL statement "UPDATE duty SET status='on_line',released_at=at_time WHERE id=d.id"
+PL/pgSQL function release_duty(bigint,bigint,timestamp with time zone,uuid) line 26 at SQL statement
+SCHEMA NAME:  transport
+TABLE NAME:  duty
+CONSTRAINT NAME:  one_vehicle_on_line
+LOCATION:  _bt_check_unique, nbtinsert.c:666

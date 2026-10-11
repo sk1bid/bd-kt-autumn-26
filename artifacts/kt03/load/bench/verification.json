@@ -1,0 +1,140 @@
+{
+  "manifest": {
+    "generator_version": 2,
+    "seed": 20261011,
+    "mode": "load",
+    "anchor": "2026-10-11T13:30:00+07:00",
+    "days": 30,
+    "vehicles": 100,
+    "tables": [
+      {
+        "table": "driver",
+        "columns": "id,license_no,full_name,admitted_until",
+        "rows": 100,
+        "sha256": "d30ab67daa27d1353f7865d43b907c2f2e0a68f1b8eefbc3a369d9dee24ade4e"
+      },
+      {
+        "table": "app_user",
+        "columns": "id,login,full_name",
+        "rows": 3,
+        "sha256": "5bf21cc965bdf19c8fa324f3ea4f44916791a7c91b2a7ff98ffe415586bcf42e"
+      },
+      {
+        "table": "user_role",
+        "columns": "user_id,role_code",
+        "rows": 3,
+        "sha256": "0708fb32fc905c906878b412e8e5498f931d509c6a1b42e4e8537cd3982d3481"
+      },
+      {
+        "table": "stop",
+        "columns": "id,name,latitude,longitude",
+        "rows": 20,
+        "sha256": "28f52fecfd03ff8d06f7a95416623dfede9b4c79bfbd487b2957db75854ddcda"
+      },
+      {
+        "table": "route",
+        "columns": "id,number,direction,name,transport_kind,path",
+        "rows": 12,
+        "sha256": "d00a3ede10019d75d4f8733c8ac4c2d97d97eb6e6020e1483c79eb9e061ae0a2"
+      },
+      {
+        "table": "route_point",
+        "columns": "route_id,point_no,stop_id,offset_seconds",
+        "rows": 240,
+        "sha256": "c327a40eef735bb8fc65c591c3dff2f36b873b2cb4fca3004eb7d936bddb78c2"
+      },
+      {
+        "table": "vehicle",
+        "columns": "id,registration_no,transport_kind,capacity,admitted_until",
+        "rows": 100,
+        "sha256": "6d105f8567e5047528048396ddb4620ef6ca61763e64c4e58723db97e208e358"
+      },
+      {
+        "table": "device",
+        "columns": "id,vendor,message_format",
+        "rows": 100,
+        "sha256": "c6fc964844275a1563b39a5f5c5ded4719d668c266bd6d536925e68067fc0863"
+      },
+      {
+        "table": "device_installation",
+        "columns": "id,device_id,vehicle_id,started_at,created_by,reason",
+        "rows": 100,
+        "sha256": "14e80c84f4eaa28ba1d997259ddb39009fc60d453666a2dc9cf41b81bfdc43cf"
+      },
+      {
+        "table": "planned_trip",
+        "columns": "id,route_id,starts_at,path_snapshot,copied_at",
+        "rows": 12000,
+        "sha256": "73fa94d3b9b27ca3f459726617c613e8e271e956d4b9b020836bc0222628db20"
+      },
+      {
+        "table": "trip_point",
+        "columns": "trip_id,point_no,stop_id,arrives_at,stop_name_snapshot,latitude_snapshot,longitude_snapshot",
+        "rows": 240000,
+        "sha256": "4e14e409af1b699366528e79000cf7e92ceb489243fae210ba9428657a44b9a5"
+      },
+      {
+        "table": "duty",
+        "columns": "id,number,service_date,vehicle_id,driver_id,status,released_at,closed_at,closed_by,close_reason,unchecked_results",
+        "rows": 3000,
+        "sha256": "43407e86b8e19c3e250a545ea55ad9541a0b620bc01f5ccc0040dce931de811f"
+      },
+      {
+        "table": "assignment",
+        "columns": "id,trip_id,duty_id,started_at,created_by,reason",
+        "rows": 11960,
+        "sha256": "a40dbeb64dc1e10895d0dbf484683306361de790d1502fa6d152508ea6fee8fb"
+      },
+      {
+        "table": "execution",
+        "columns": "trip_id,status,actual_start,actual_end,completion_source,next_point_no,review_due_at",
+        "rows": 11920,
+        "sha256": "86f8126c253f11d63bff0e4d0367e3ec519e5f2eda6345c4691cc3dd9aaea19e"
+      },
+      {
+        "table": "trip_decision",
+        "columns": "trip_id,decision_no,author_id,decided_at,outcome,reason,status_before,status_after,confirmed_start,confirmed_end",
+        "rows": 1494,
+        "sha256": "e49df134a7daf7c394b468ecf6f9aaa3f4de3ca6fd208abb79488d938e5183ef"
+      },
+      {
+        "table": "passage",
+        "columns": "trip_id,point_no,arrived_at,source_device_id,source_message_id,evidence",
+        "rows": 154420,
+        "sha256": "55cbb9272f13e9b503bfaa2b81fdcf0aae9bde56cc0359a7daa37ac78195d449"
+      },
+      {
+        "table": "passage_correction",
+        "columns": "trip_id,point_no,correction_no,corrected_at,author_id,reliable,reason",
+        "rows": 773,
+        "sha256": "493c29d48ae8227390eb475f59224160a9e785ff7b6c6507aafb595a22cea181"
+      },
+      {
+        "table": "deviation",
+        "columns": "id,duty_id,trip_id,point_no,kind,detected_at,measured_value,closed_at,closed_by,close_reason,comment",
+        "rows": 38429,
+        "sha256": "64bc241ec65a3149a082fe7d0c517e32e98571fde41e2a25d9606027ed2c8ecc"
+      },
+      {
+        "table": "message_key",
+        "columns": "device_id,message_id,content_sha256,first_received_at,generated_at,installation_id,first_receipt_id,result",
+        "rows": 3000000,
+        "sha256": "59d33eb28e1a378dac336487f93989a7c7af07e5f4d1cc5492d119495693b1b3"
+      }
+    ]
+  },
+  "results_identical": true,
+  "runs": 7,
+  "sql_sha256": {
+    "sql/kt03/optimize.sql": "abb78cd955e65cafdee9d8ac09d744c70d8cfe45bf70849825dca1a5ba04789b",
+    "sql/kt03/queries/01_schedule.sql": "1ca9cfb04a29f99700338a4b5136f909d5bd5c6eea6c6714999e6c637b216217",
+    "sql/kt03/queries/01_schedule_before.sql": "8984ccecec99e2a12a3cd40d39c1f29f0ddcd862dbddcfec181e583bd437cfdb",
+    "sql/kt03/queries/02_late_routes.sql": "ae4dcdc41d461c9120a5cc5a9d868115d300aa43cc34fb580245bf5e88397aae",
+    "sql/kt03/queries/03_open_deviations.sql": "48c5dc317c95d361582e07c2fcc3f73dd49d95b84a50a458db44e0da9270e258",
+    "sql/kt03/queries/04_message_quality.sql": "e9dd10c4d7c70096e15fd5afdb9748f92fe58ae9ab0af964b939de80d8d492eb",
+    "sql/kt03/queries/05_device_history.sql": "a2234d46d769f5253da764aa80e2c375dd55c624a47d9f810944c095e2323f8c"
+  },
+  "status": "PASS",
+  "timing": "EXPLAIN ANALYZE Execution Time, milliseconds; warm cache",
+  "warmups": 2
+}

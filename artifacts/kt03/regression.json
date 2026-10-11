@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "server": "PostgreSQL 17.10 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit",
+  "checked_at_utc": "2026-10-11T13:31:33Z",
+  "checks": [
+    "All migrations on a clean database",
+    "Repeated migration run changes nothing",
+    "Changed SQL of an applied migration rejected by SHA-256",
+    "Comment and whitespace edits of applied migrations accepted",
+    "Registry of the previous commented release upgrades to the latest schema",
+    "Upgrade 002 -\u003e 003 -\u003e 004 with lifecycle data: rows kept, schema equals clean, results unchanged",
+    "Two concurrent releases of the same vehicle: exactly one succeeds",
+    "Two concurrent requests with one request id: applied once, both succeed",
+    "Two concurrent releases of one duty without request id: second rejected",
+    "Two concurrent replacements of one duty: exactly one succeeds",
+    "Release, then concurrent plan refresh: refresh rejected after waiting",
+    "Plan refresh, then concurrent release: release freezes the refreshed plan",
+    "Two concurrent trip starts in one duty: exactly one succeeds",
+    "Duty closure concurrent with trip start: closure rejected",
+    "Concurrent removal of a user's two roles: write skew rejected",
+    "Consistent seed committed with deferred constraints",
+    "Report before release: N=0 gives NULL share",
+    "Negative constraints and rollback: 55 rejections with expected SQLSTATE and constraint or message: NOT NULL [23502]; UNIQUE registration [23505]; CHECK capacity [23514]; CHECK coordinate [23514]; FOREIGN KEY [23503]; PRIMARY KEY point [23505]; Minimum two points [23514]; Point sequence has no gaps [23514]; Increasing offsets [23514]; User must have role [23514]; EXCLUDE installation [23P01]; EXCLUDE assignment history [23P01]; EXCLUDE planned vehicle [23P01]; Derived interval cannot be forged [23514]; No empty release [23514]; Dispatcher role required [42501]; Expired admission [23514]; Frozen plan [23514]; Waiting execution blocks close [23514]; One execution per trip [23505]; Device hash length [23514]; Closure before trip end [23514]; Closure before decision [23514]; Closure before release [23514]; Decision before release [23514]; Confirmed end after closure [23514]; Start while another trip needs review [23514]; Dispatcher completion without decision [23514]; Failure without decision [23514]; Forged decision row [23514]; Telemetry completion without last point [23514]; Passage before start [23514]; Passage from another bus device [23514]; Unreliable passage cannot be restored [23514]; Connection loss belongs to duty only [23514]; Deleting closed deviation [23514]; Truncating decisions [23514]; Release before plan refresh [23514]; Continue after closure (KP-05.9) [23514]; Completion ends after decision (KP-05.11) [23514]; Completion ends before start (KP-05.11) [23514]; Decision without reason (KP-05.11) [23514]; Decision by analyst [42501]; Decision contradicts reliable passage [23514]; Decision time moves backwards [23514]; Refresh after release [23514]; Release of closed duty [23514]; Release of cancelled duty [23514]; Cancellation without reason [23514]; Deviation closed twice [23514]; Second current assignment (KP-01.3) [23514]; Assignment to duty on line [23514]; Trip creation by dispatcher [42501]; Request id reused [23505]; Refresh overlaps next duty (KP-01.6) [23P01]",
+    "Boundary and plan snapshot checks",
+    "Operations: plan refresh, replacements, cancellation, trip copy, request ids, closure, report filter",
+    "Application and telemetry roles cannot bypass operations",
+    "Duty, execution and deviation lifecycles with asserted results",
+    "Report: 4 trips; 2 done (1 by dispatcher); 1 failed; 1 unreleased; K=2 N=2; 1 unreliable; 0 open deviations"
+  ]
+}

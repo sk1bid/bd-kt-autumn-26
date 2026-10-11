@@ -1,0 +1,86 @@
+[
+  {
+    "number": "М-01",
+    "route_id": 1,
+    "late_points": 11071,
+    "affected_trips": 565,
+    "mean_delay_minutes": 10.46
+  },
+  {
+    "number": "М-02",
+    "route_id": 2,
+    "late_points": 10376,
+    "affected_trips": 530,
+    "mean_delay_minutes": 10.51
+  },
+  {
+    "number": "М-11",
+    "route_id": 11,
+    "late_points": 1278,
+    "affected_trips": 65,
+    "mean_delay_minutes": 10.87
+  },
+  {
+    "number": "М-04",
+    "route_id": 4,
+    "late_points": 1244,
+    "affected_trips": 64,
+    "mean_delay_minutes": 10.95
+  },
+  {
+    "number": "М-09",
+    "route_id": 9,
+    "late_points": 1239,
+    "affected_trips": 63,
+    "mean_delay_minutes": 10.65
+  },
+  {
+    "number": "М-03",
+    "route_id": 3,
+    "late_points": 986,
+    "affected_trips": 50,
+    "mean_delay_minutes": 10.92
+  },
+  {
+    "number": "М-10",
+    "route_id": 10,
+    "late_points": 921,
+    "affected_trips": 47,
+    "mean_delay_minutes": 10.50
+  },
+  {
+    "number": "М-12",
+    "route_id": 12,
+    "late_points": 810,
+    "affected_trips": 41,
+    "mean_delay_minutes": 9.92
+  },
+  {
+    "number": "М-08",
+    "route_id": 8,
+    "late_points": 786,
+    "affected_trips": 40,
+    "mean_delay_minutes": 10.63
+  },
+  {
+    "number": "М-07",
+    "route_id": 7,
+    "late_points": 764,
+    "affected_trips": 39,
+    "mean_delay_minutes": 10.61
+  },
+  {
+    "number": "М-05",
+    "route_id": 5,
+    "late_points": 660,
+    "affected_trips": 34,
+    "mean_delay_minutes": 10.87
+  },
+  {
+    "number": "М-06",
+    "route_id": 6,
+    "late_points": 647,
+    "affected_trips": 33,
+    "mean_delay_minutes": 9.44
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "query": "schedule",
+    "stage": "before",
+    "execution_ms": [
+      978.425,
+      1010.233,
+      881.932,
+      905.947,
+      818.601,
+      853.753,
+      789.172
+    ],
+    "median_ms": 881.932
+  },
+  {
+    "query": "history_hot",
+    "stage": "before",
+    "execution_ms": [
+      0.78,
+      0.832,
+      0.777,
+      0.817,
+      0.679,
+      0.675,
+      0.657
+    ],
+    "median_ms": 0.777
+  },
+  {
+    "query": "history_rare",
+    "stage": "before",
+    "execution_ms": [
+      6.321,
+      5.618,
+      6.495,
+      5.784,
+      5.865,
+      5.933,
+      5.875
+    ],
+    "median_ms": 5.875
+  },
+  {
+    "query": "schedule",
+    "stage": "after",
+    "execution_ms": [
+      352.643,
+      340.102,
+      304.79,
+      313.41,
+      344.208,
+      337.32,
+      337.322
+    ],
+    "median_ms": 337.322
+  },
+  {
+    "query": "history_hot",
+    "stage": "after",
+    "execution_ms": [
+      0.192,
+      0.147,
+      0.167,
+      0.166,
+      0.186,
+      0.153,
+      0.158
+    ],
+    "median_ms": 0.166
+  },
+  {
+    "query": "history_rare",
+    "stage": "after",
+    "execution_ms": [
+      0.158,
+      0.356,
+      0.188,
+      0.174,
+      0.166,
+      0.178,
+      0.167
+    ],
+    "median_ms": 0.174
+  }
+]

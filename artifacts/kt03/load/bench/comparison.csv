@@ -1,0 +1,4 @@
+query,before_median_ms,after_median_ms,speedup,runs
+schedule,881.932,337.322,2.61,7
+history_hot,0.777,0.166,4.68,7
+history_rare,5.875,0.174,33.76,7

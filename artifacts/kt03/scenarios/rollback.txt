@@ -1,0 +1,6 @@
+ERROR:  23514: Driver/vehicle not admitted
+CONTEXT:  PL/pgSQL function release_duty(bigint,bigint,timestamp with time zone,uuid) line 12 at RAISE
+SQL statement "SELECT release_duty(new_key,actor,at_time)"
+PL/pgSQL function replace_duty(bigint,bigint,bigint,timestamp with time zone,text,uuid) line 19 at PERFORM
+LOCATION:  exec_stmt_raise, pl_exec.c:3897
+PASS controlled ROLLBACK SQLSTATE 23514

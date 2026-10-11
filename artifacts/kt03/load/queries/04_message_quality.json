@@ -1,0 +1,902 @@
+[
+  {
+    "stale": 6632,
+    "total": 210146,
+    "vendor": "vendor-2",
+    "invalid": 11029,
+    "accepted": 192485,
+    "device_id": "device-003",
+    "rejected_percent": 8.40
+  },
+  {
+    "stale": 6662,
+    "total": 209697,
+    "vendor": "vendor-2",
+    "invalid": 11007,
+    "accepted": 192028,
+    "device_id": "device-001",
+    "rejected_percent": 8.43
+  },
+  {
+    "stale": 6506,
+    "total": 209629,
+    "vendor": "vendor-1",
+    "invalid": 10895,
+    "accepted": 192228,
+    "device_id": "device-002",
+    "rejected_percent": 8.30
+  },
+  {
+    "stale": 6521,
+    "total": 209218,
+    "vendor": "vendor-1",
+    "invalid": 10805,
+    "accepted": 191892,
+    "device_id": "device-010",
+    "rejected_percent": 8.28
+  },
+  {
+    "stale": 6643,
+    "total": 209198,
+    "vendor": "vendor-1",
+    "invalid": 10827,
+    "accepted": 191728,
+    "device_id": "device-006",
+    "rejected_percent": 8.35
+  },
+  {
+    "stale": 6587,
+    "total": 209056,
+    "vendor": "vendor-2",
+    "invalid": 10919,
+    "accepted": 191550,
+    "device_id": "device-009",
+    "rejected_percent": 8.37
+  },
+  {
+    "stale": 6673,
+    "total": 208897,
+    "vendor": "vendor-2",
+    "invalid": 11083,
+    "accepted": 191141,
+    "device_id": "device-005",
+    "rejected_percent": 8.50
+  },
+  {
+    "stale": 6535,
+    "total": 208636,
+    "vendor": "vendor-1",
+    "invalid": 11046,
+    "accepted": 191055,
+    "device_id": "device-004",
+    "rejected_percent": 8.43
+  },
+  {
+    "stale": 6618,
+    "total": 208621,
+    "vendor": "vendor-1",
+    "invalid": 10712,
+    "accepted": 191291,
+    "device_id": "device-008",
+    "rejected_percent": 8.31
+  },
+  {
+    "stale": 6630,
+    "total": 208558,
+    "vendor": "vendor-2",
+    "invalid": 10764,
+    "accepted": 191164,
+    "device_id": "device-007",
+    "rejected_percent": 8.34
+  },
+  {
+    "stale": 275,
+    "total": 10419,
+    "vendor": "vendor-1",
+    "invalid": 435,
+    "accepted": 9709,
+    "device_id": "device-024",
+    "rejected_percent": 6.81
+  },
+  {
+    "stale": 294,
+    "total": 10416,
+    "vendor": "vendor-1",
+    "invalid": 447,
+    "accepted": 9675,
+    "device_id": "device-082",
+    "rejected_percent": 7.11
+  },
+  {
+    "stale": 292,
+    "total": 10411,
+    "vendor": "vendor-2",
+    "invalid": 436,
+    "accepted": 9683,
+    "device_id": "device-037",
+    "rejected_percent": 6.99
+  },
+  {
+    "stale": 282,
+    "total": 10357,
+    "vendor": "vendor-2",
+    "invalid": 418,
+    "accepted": 9657,
+    "device_id": "device-049",
+    "rejected_percent": 6.76
+  },
+  {
+    "stale": 276,
+    "total": 10324,
+    "vendor": "vendor-1",
+    "invalid": 471,
+    "accepted": 9577,
+    "device_id": "device-022",
+    "rejected_percent": 7.24
+  },
+  {
+    "stale": 293,
+    "total": 10317,
+    "vendor": "vendor-2",
+    "invalid": 424,
+    "accepted": 9600,
+    "device_id": "device-089",
+    "rejected_percent": 6.95
+  },
+  {
+    "stale": 263,
+    "total": 10315,
+    "vendor": "vendor-1",
+    "invalid": 456,
+    "accepted": 9596,
+    "device_id": "device-078",
+    "rejected_percent": 6.97
+  },
+  {
+    "stale": 254,
+    "total": 10307,
+    "vendor": "vendor-1",
+    "invalid": 430,
+    "accepted": 9623,
+    "device_id": "device-052",
+    "rejected_percent": 6.64
+  },
+  {
+    "stale": 246,
+    "total": 10301,
+    "vendor": "vendor-2",
+    "invalid": 431,
+    "accepted": 9624,
+    "device_id": "device-041",
+    "rejected_percent": 6.57
+  },
+  {
+    "stale": 254,
+    "total": 10299,
+    "vendor": "vendor-1",
+    "invalid": 451,
+    "accepted": 9594,
+    "device_id": "device-092",
+    "rejected_percent": 6.85
+  },
+  {
+    "stale": 261,
+    "total": 10280,
+    "vendor": "vendor-2",
+    "invalid": 427,
+    "accepted": 9592,
+    "device_id": "device-013",
+    "rejected_percent": 6.69
+  },
+  {
+    "stale": 270,
+    "total": 10276,
+    "vendor": "vendor-2",
+    "invalid": 454,
+    "accepted": 9552,
+    "device_id": "device-059",
+    "rejected_percent": 7.05
+  },
+  {
+    "stale": 266,
+    "total": 10272,
+    "vendor": "vendor-1",
+    "invalid": 473,
+    "accepted": 9533,
+    "device_id": "device-018",
+    "rejected_percent": 7.19
+  },
+  {
+    "stale": 280,
+    "total": 10263,
+    "vendor": "vendor-1",
+    "invalid": 483,
+    "accepted": 9500,
+    "device_id": "device-020",
+    "rejected_percent": 7.43
+  },
+  {
+    "stale": 272,
+    "total": 10263,
+    "vendor": "vendor-2",
+    "invalid": 462,
+    "accepted": 9529,
+    "device_id": "device-083",
+    "rejected_percent": 7.15
+  },
+  {
+    "stale": 242,
+    "total": 10254,
+    "vendor": "vendor-2",
+    "invalid": 473,
+    "accepted": 9539,
+    "device_id": "device-081",
+    "rejected_percent": 6.97
+  },
+  {
+    "stale": 273,
+    "total": 10233,
+    "vendor": "vendor-2",
+    "invalid": 464,
+    "accepted": 9496,
+    "device_id": "device-025",
+    "rejected_percent": 7.20
+  },
+  {
+    "stale": 310,
+    "total": 10225,
+    "vendor": "vendor-2",
+    "invalid": 511,
+    "accepted": 9404,
+    "device_id": "device-011",
+    "rejected_percent": 8.03
+  },
+  {
+    "stale": 269,
+    "total": 10209,
+    "vendor": "vendor-2",
+    "invalid": 441,
+    "accepted": 9499,
+    "device_id": "device-047",
+    "rejected_percent": 6.95
+  },
+  {
+    "stale": 310,
+    "total": 10206,
+    "vendor": "vendor-2",
+    "invalid": 425,
+    "accepted": 9471,
+    "device_id": "device-095",
+    "rejected_percent": 7.20
+  },
+  {
+    "stale": 257,
+    "total": 10195,
+    "vendor": "vendor-1",
+    "invalid": 456,
+    "accepted": 9482,
+    "device_id": "device-034",
+    "rejected_percent": 6.99
+  },
+  {
+    "stale": 263,
+    "total": 10191,
+    "vendor": "vendor-1",
+    "invalid": 435,
+    "accepted": 9493,
+    "device_id": "device-028",
+    "rejected_percent": 6.85
+  },
+  {
+    "stale": 250,
+    "total": 10189,
+    "vendor": "vendor-1",
+    "invalid": 456,
+    "accepted": 9483,
+    "device_id": "device-080",
+    "rejected_percent": 6.93
+  },
+  {
+    "stale": 278,
+    "total": 10186,
+    "vendor": "vendor-1",
+    "invalid": 465,
+    "accepted": 9443,
+    "device_id": "device-100",
+    "rejected_percent": 7.29
+  },
+  {
+    "stale": 256,
+    "total": 10185,
+    "vendor": "vendor-2",
+    "invalid": 440,
+    "accepted": 9489,
+    "device_id": "device-017",
+    "rejected_percent": 6.83
+  },
+  {
+    "stale": 289,
+    "total": 10185,
+    "vendor": "vendor-2",
+    "invalid": 458,
+    "accepted": 9438,
+    "device_id": "device-099",
+    "rejected_percent": 7.33
+  },
+  {
+    "stale": 238,
+    "total": 10182,
+    "vendor": "vendor-2",
+    "invalid": 459,
+    "accepted": 9485,
+    "device_id": "device-057",
+    "rejected_percent": 6.85
+  },
+  {
+    "stale": 294,
+    "total": 10181,
+    "vendor": "vendor-2",
+    "invalid": 438,
+    "accepted": 9449,
+    "device_id": "device-027",
+    "rejected_percent": 7.19
+  },
+  {
+    "stale": 267,
+    "total": 10175,
+    "vendor": "vendor-1",
+    "invalid": 400,
+    "accepted": 9508,
+    "device_id": "device-040",
+    "rejected_percent": 6.56
+  },
+  {
+    "stale": 269,
+    "total": 10173,
+    "vendor": "vendor-1",
+    "invalid": 488,
+    "accepted": 9416,
+    "device_id": "device-016",
+    "rejected_percent": 7.44
+  },
+  {
+    "stale": 263,
+    "total": 10169,
+    "vendor": "vendor-1",
+    "invalid": 458,
+    "accepted": 9448,
+    "device_id": "device-062",
+    "rejected_percent": 7.09
+  },
+  {
+    "stale": 275,
+    "total": 10162,
+    "vendor": "vendor-2",
+    "invalid": 431,
+    "accepted": 9456,
+    "device_id": "device-045",
+    "rejected_percent": 6.95
+  },
+  {
+    "stale": 286,
+    "total": 10157,
+    "vendor": "vendor-1",
+    "invalid": 421,
+    "accepted": 9450,
+    "device_id": "device-076",
+    "rejected_percent": 6.96
+  },
+  {
+    "stale": 295,
+    "total": 10149,
+    "vendor": "vendor-2",
+    "invalid": 447,
+    "accepted": 9407,
+    "device_id": "device-029",
+    "rejected_percent": 7.31
+  },
+  {
+    "stale": 256,
+    "total": 10146,
+    "vendor": "vendor-2",
+    "invalid": 469,
+    "accepted": 9421,
+    "device_id": "device-087",
+    "rejected_percent": 7.15
+  },
+  {
+    "stale": 257,
+    "total": 10131,
+    "vendor": "vendor-1",
+    "invalid": 438,
+    "accepted": 9436,
+    "device_id": "device-026",
+    "rejected_percent": 6.86
+  },
+  {
+    "stale": 274,
+    "total": 10128,
+    "vendor": "vendor-1",
+    "invalid": 423,
+    "accepted": 9431,
+    "device_id": "device-046",
+    "rejected_percent": 6.88
+  },
+  {
+    "stale": 253,
+    "total": 10125,
+    "vendor": "vendor-2",
+    "invalid": 477,
+    "accepted": 9395,
+    "device_id": "device-043",
+    "rejected_percent": 7.21
+  },
+  {
+    "stale": 242,
+    "total": 10123,
+    "vendor": "vendor-1",
+    "invalid": 442,
+    "accepted": 9439,
+    "device_id": "device-032",
+    "rejected_percent": 6.76
+  },
+  {
+    "stale": 273,
+    "total": 10122,
+    "vendor": "vendor-1",
+    "invalid": 472,
+    "accepted": 9377,
+    "device_id": "device-012",
+    "rejected_percent": 7.36
+  },
+  {
+    "stale": 262,
+    "total": 10122,
+    "vendor": "vendor-1",
+    "invalid": 421,
+    "accepted": 9439,
+    "device_id": "device-070",
+    "rejected_percent": 6.75
+  },
+  {
+    "stale": 268,
+    "total": 10114,
+    "vendor": "vendor-2",
+    "invalid": 425,
+    "accepted": 9421,
+    "device_id": "device-085",
+    "rejected_percent": 6.85
+  },
+  {
+    "stale": 286,
+    "total": 10102,
+    "vendor": "vendor-1",
+    "invalid": 492,
+    "accepted": 9324,
+    "device_id": "device-048",
+    "rejected_percent": 7.70
+  },
+  {
+    "stale": 286,
+    "total": 10101,
+    "vendor": "vendor-1",
+    "invalid": 437,
+    "accepted": 9378,
+    "device_id": "device-044",
+    "rejected_percent": 7.16
+  },
+  {
+    "stale": 257,
+    "total": 10098,
+    "vendor": "vendor-2",
+    "invalid": 448,
+    "accepted": 9393,
+    "device_id": "device-019",
+    "rejected_percent": 6.98
+  },
+  {
+    "stale": 279,
+    "total": 10098,
+    "vendor": "vendor-2",
+    "invalid": 476,
+    "accepted": 9343,
+    "device_id": "device-067",
+    "rejected_percent": 7.48
+  },
+  {
+    "stale": 284,
+    "total": 10097,
+    "vendor": "vendor-1",
+    "invalid": 432,
+    "accepted": 9381,
+    "device_id": "device-030",
+    "rejected_percent": 7.09
+  },
+  {
+    "stale": 248,
+    "total": 10096,
+    "vendor": "vendor-1",
+    "invalid": 466,
+    "accepted": 9382,
+    "device_id": "device-014",
+    "rejected_percent": 7.07
+  },
+  {
+    "stale": 254,
+    "total": 10086,
+    "vendor": "vendor-2",
+    "invalid": 445,
+    "accepted": 9387,
+    "device_id": "device-061",
+    "rejected_percent": 6.93
+  },
+  {
+    "stale": 284,
+    "total": 10078,
+    "vendor": "vendor-2",
+    "invalid": 423,
+    "accepted": 9371,
+    "device_id": "device-073",
+    "rejected_percent": 7.02
+  },
+  {
+    "stale": 251,
+    "total": 10074,
+    "vendor": "vendor-2",
+    "invalid": 456,
+    "accepted": 9367,
+    "device_id": "device-035",
+    "rejected_percent": 7.02
+  },
+  {
+    "stale": 278,
+    "total": 10071,
+    "vendor": "vendor-1",
+    "invalid": 432,
+    "accepted": 9361,
+    "device_id": "device-050",
+    "rejected_percent": 7.05
+  },
+  {
+    "stale": 283,
+    "total": 10067,
+    "vendor": "vendor-1",
+    "invalid": 446,
+    "accepted": 9338,
+    "device_id": "device-066",
+    "rejected_percent": 7.24
+  },
+  {
+    "stale": 272,
+    "total": 10063,
+    "vendor": "vendor-1",
+    "invalid": 419,
+    "accepted": 9372,
+    "device_id": "device-088",
+    "rejected_percent": 6.87
+  },
+  {
+    "stale": 288,
+    "total": 10056,
+    "vendor": "vendor-2",
+    "invalid": 464,
+    "accepted": 9304,
+    "device_id": "device-033",
+    "rejected_percent": 7.48
+  },
+  {
+    "stale": 271,
+    "total": 10055,
+    "vendor": "vendor-2",
+    "invalid": 446,
+    "accepted": 9338,
+    "device_id": "device-015",
+    "rejected_percent": 7.13
+  },
+  {
+    "stale": 271,
+    "total": 10038,
+    "vendor": "vendor-1",
+    "invalid": 474,
+    "accepted": 9293,
+    "device_id": "device-064",
+    "rejected_percent": 7.42
+  },
+  {
+    "stale": 282,
+    "total": 10038,
+    "vendor": "vendor-1",
+    "invalid": 444,
+    "accepted": 9312,
+    "device_id": "device-072",
+    "rejected_percent": 7.23
+  },
+  {
+    "stale": 264,
+    "total": 10037,
+    "vendor": "vendor-2",
+    "invalid": 419,
+    "accepted": 9354,
+    "device_id": "device-075",
+    "rejected_percent": 6.80
+  },
+  {
+    "stale": 247,
+    "total": 10023,
+    "vendor": "vendor-2",
+    "invalid": 463,
+    "accepted": 9313,
+    "device_id": "device-031",
+    "rejected_percent": 7.08
+  },
+  {
+    "stale": 263,
+    "total": 10021,
+    "vendor": "vendor-1",
+    "invalid": 430,
+    "accepted": 9328,
+    "device_id": "device-036",
+    "rejected_percent": 6.92
+  },
+  {
+    "stale": 260,
+    "total": 10006,
+    "vendor": "vendor-2",
+    "invalid": 440,
+    "accepted": 9306,
+    "device_id": "device-069",
+    "rejected_percent": 7.00
+  },
+  {
+    "stale": 272,
+    "total": 10004,
+    "vendor": "vendor-2",
+    "invalid": 454,
+    "accepted": 9278,
+    "device_id": "device-039",
+    "rejected_percent": 7.26
+  },
+  {
+    "stale": 280,
+    "total": 10002,
+    "vendor": "vendor-1",
+    "invalid": 456,
+    "accepted": 9266,
+    "device_id": "device-054",
+    "rejected_percent": 7.36
+  },
+  {
+    "stale": 289,
+    "total": 9992,
+    "vendor": "vendor-2",
+    "invalid": 422,
+    "accepted": 9281,
+    "device_id": "device-021",
+    "rejected_percent": 7.12
+  },
+  {
+    "stale": 270,
+    "total": 9992,
+    "vendor": "vendor-2",
+    "invalid": 447,
+    "accepted": 9275,
+    "device_id": "device-077",
+    "rejected_percent": 7.18
+  },
+  {
+    "stale": 253,
+    "total": 9987,
+    "vendor": "vendor-1",
+    "invalid": 431,
+    "accepted": 9303,
+    "device_id": "device-096",
+    "rejected_percent": 6.85
+  },
+  {
+    "stale": 259,
+    "total": 9972,
+    "vendor": "vendor-1",
+    "invalid": 416,
+    "accepted": 9297,
+    "device_id": "device-084",
+    "rejected_percent": 6.77
+  },
+  {
+    "stale": 262,
+    "total": 9965,
+    "vendor": "vendor-2",
+    "invalid": 476,
+    "accepted": 9227,
+    "device_id": "device-091",
+    "rejected_percent": 7.41
+  },
+  {
+    "stale": 268,
+    "total": 9964,
+    "vendor": "vendor-2",
+    "invalid": 420,
+    "accepted": 9276,
+    "device_id": "device-053",
+    "rejected_percent": 6.90
+  },
+  {
+    "stale": 257,
+    "total": 9958,
+    "vendor": "vendor-1",
+    "invalid": 458,
+    "accepted": 9243,
+    "device_id": "device-058",
+    "rejected_percent": 7.18
+  },
+  {
+    "stale": 266,
+    "total": 9955,
+    "vendor": "vendor-1",
+    "invalid": 411,
+    "accepted": 9278,
+    "device_id": "device-094",
+    "rejected_percent": 6.80
+  },
+  {
+    "stale": 294,
+    "total": 9954,
+    "vendor": "vendor-1",
+    "invalid": 431,
+    "accepted": 9229,
+    "device_id": "device-068",
+    "rejected_percent": 7.28
+  },
+  {
+    "stale": 262,
+    "total": 9939,
+    "vendor": "vendor-2",
+    "invalid": 445,
+    "accepted": 9232,
+    "device_id": "device-093",
+    "rejected_percent": 7.11
+  },
+  {
+    "stale": 233,
+    "total": 9938,
+    "vendor": "vendor-2",
+    "invalid": 433,
+    "accepted": 9272,
+    "device_id": "device-079",
+    "rejected_percent": 6.70
+  },
+  {
+    "stale": 258,
+    "total": 9932,
+    "vendor": "vendor-2",
+    "invalid": 438,
+    "accepted": 9236,
+    "device_id": "device-097",
+    "rejected_percent": 7.01
+  },
+  {
+    "stale": 260,
+    "total": 9923,
+    "vendor": "vendor-2",
+    "invalid": 451,
+    "accepted": 9212,
+    "device_id": "device-071",
+    "rejected_percent": 7.17
+  },
+  {
+    "stale": 259,
+    "total": 9918,
+    "vendor": "vendor-1",
+    "invalid": 480,
+    "accepted": 9179,
+    "device_id": "device-038",
+    "rejected_percent": 7.45
+  },
+  {
+    "stale": 261,
+    "total": 9906,
+    "vendor": "vendor-1",
+    "invalid": 429,
+    "accepted": 9216,
+    "device_id": "device-042",
+    "rejected_percent": 6.97
+  },
+  {
+    "stale": 292,
+    "total": 9888,
+    "vendor": "vendor-1",
+    "invalid": 427,
+    "accepted": 9169,
+    "device_id": "device-086",
+    "rejected_percent": 7.27
+  },
+  {
+    "stale": 256,
+    "total": 9886,
+    "vendor": "vendor-1",
+    "invalid": 428,
+    "accepted": 9202,
+    "device_id": "device-074",
+    "rejected_percent": 6.92
+  },
+  {
+    "stale": 277,
+    "total": 9882,
+    "vendor": "vendor-2",
+    "invalid": 418,
+    "accepted": 9187,
+    "device_id": "device-055",
+    "rejected_percent": 7.03
+  },
+  {
+    "stale": 277,
+    "total": 9878,
+    "vendor": "vendor-1",
+    "invalid": 391,
+    "accepted": 9210,
+    "device_id": "device-056",
+    "rejected_percent": 6.76
+  },
+  {
+    "stale": 272,
+    "total": 9865,
+    "vendor": "vendor-2",
+    "invalid": 460,
+    "accepted": 9133,
+    "device_id": "device-051",
+    "rejected_percent": 7.42
+  },
+  {
+    "stale": 272,
+    "total": 9857,
+    "vendor": "vendor-2",
+    "invalid": 459,
+    "accepted": 9126,
+    "device_id": "device-023",
+    "rejected_percent": 7.42
+  },
+  {
+    "stale": 257,
+    "total": 9848,
+    "vendor": "vendor-1",
+    "invalid": 438,
+    "accepted": 9153,
+    "device_id": "device-060",
+    "rejected_percent": 7.06
+  },
+  {
+    "stale": 285,
+    "total": 9838,
+    "vendor": "vendor-2",
+    "invalid": 441,
+    "accepted": 9112,
+    "device_id": "device-063",
+    "rejected_percent": 7.38
+  },
+  {
+    "stale": 262,
+    "total": 9830,
+    "vendor": "vendor-1",
+    "invalid": 474,
+    "accepted": 9094,
+    "device_id": "device-098",
+    "rejected_percent": 7.49
+  },
+  {
+    "stale": 263,
+    "total": 9789,
+    "vendor": "vendor-2",
+    "invalid": 425,
+    "accepted": 9101,
+    "device_id": "device-065",
+    "rejected_percent": 7.03
+  },
+  {
+    "stale": 285,
+    "total": 9740,
+    "vendor": "vendor-1",
+    "invalid": 459,
+    "accepted": 8996,
+    "device_id": "device-090",
+    "rejected_percent": 7.64
+  }
+]

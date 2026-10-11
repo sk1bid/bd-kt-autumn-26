@@ -1,0 +1,17 @@
+{
+  "cases": {
+    "reject telemetry after review": {
+      "telemetry_after_unresolved_review": 1,
+      "telemetry_start_outside_window": 0
+    },
+    "reject three-minute early start": {
+      "telemetry_after_unresolved_review": 0,
+      "telemetry_start_outside_window": 1
+    },
+    "valid fixture": {
+      "telemetry_after_unresolved_review": 0,
+      "telemetry_start_outside_window": 0
+    }
+  },
+  "status": "PASS"
+}

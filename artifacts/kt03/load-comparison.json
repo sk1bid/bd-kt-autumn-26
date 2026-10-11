@@ -1,0 +1,36 @@
+{
+  "batch_rows_insert": 1000,
+  "constraints_enabled": true,
+  "identical_rows_digest": "75000/9a2a61233034957ea9c3137b1fa82afb",
+  "indexes": "schema migrations 001–005; optimization index absent",
+  "median_ms": {
+    "copy": 1068.018,
+    "insert": 1306.772
+  },
+  "rows": 75000,
+  "runs_per_method": 7,
+  "seed": 20261011,
+  "status": "PASS",
+  "transactions_per_run": 1,
+  "wall_ms_including_encoding_transfer_commit": {
+    "copy": [
+      1188.619,
+      1069.86,
+      1041.812,
+      1068.018,
+      1051.523,
+      1047.226,
+      1071.867
+    ],
+    "insert": [
+      1238.147,
+      1345.171,
+      1444.912,
+      1306.772,
+      1349.478,
+      1249.318,
+      1273.242
+    ]
+  },
+  "warmups_per_method": 1
+}

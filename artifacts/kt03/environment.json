@@ -1,0 +1,74 @@
+{
+  "captured_at_utc": "2026-10-11T13:30:56Z",
+  "compose_version": "5.1.3",
+  "container": {
+    "cpu_nano_limit": 0,
+    "cpu_period": 0,
+    "cpu_quota": 0,
+    "image_id": "sha256:dc17045ccfd343b49600570ea734b9c4991cf1c3f3302e67df51e3b402dd55c4",
+    "image_tag": "postgres:17-alpine@sha256:dc17045ccfd343b49600570ea734b9c4991cf1c3f3302e67df51e3b402dd55c4",
+    "memory_limit_bytes": 0,
+    "shared_memory_bytes": 67108864
+  },
+  "docker": {
+    "architecture": "aarch64",
+    "cpus": 15,
+    "memory_bytes": 10418151424,
+    "operating_system": "Docker Desktop",
+    "server_version": "29.4.1"
+  },
+  "go_version": "go version go1.26.5 darwin/arm64",
+  "postgresql": {
+    "version": "PostgreSQL 17.10 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit",
+    "settings": {
+      "jit": {
+        "unit": null,
+        "value": "on"
+      },
+      "fsync": {
+        "unit": null,
+        "value": "on"
+      },
+      "TimeZone": {
+        "unit": null,
+        "value": "Asia/Novosibirsk"
+      },
+      "work_mem": {
+        "unit": "kB",
+        "value": "4096"
+      },
+      "shared_buffers": {
+        "unit": "8kB",
+        "value": "16384"
+      },
+      "max_connections": {
+        "unit": null,
+        "value": "100"
+      },
+      "synchronous_commit": {
+        "unit": null,
+        "value": "on"
+      },
+      "effective_cache_size": {
+        "unit": "8kB",
+        "value": "524288"
+      },
+      "maintenance_work_mem": {
+        "unit": "kB",
+        "value": "65536"
+      },
+      "max_parallel_workers": {
+        "unit": null,
+        "value": "8"
+      },
+      "max_worker_processes": {
+        "unit": null,
+        "value": "8"
+      },
+      "max_parallel_workers_per_gather": {
+        "unit": null,
+        "value": "2"
+      }
+    }
+  }
+}

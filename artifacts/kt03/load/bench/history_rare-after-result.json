@@ -1,0 +1,162 @@
+[
+  {
+    "result": "accepted",
+    "device_id": "device-100",
+    "message_id": "7e139cfc-5d6d-4fe8-81f4-f863bf494c8f",
+    "generated_at": "2026-10-11T12:59:21+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:59:22+07:00"
+  },
+  {
+    "result": "accepted",
+    "device_id": "device-100",
+    "message_id": "f94f0be0-e074-43ad-9960-e2600111f957",
+    "generated_at": "2026-10-11T12:58:59+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:59:14+07:00"
+  },
+  {
+    "result": "accepted",
+    "device_id": "device-100",
+    "message_id": "6eaf9786-3566-4619-9c01-51c40620a20f",
+    "generated_at": "2026-10-11T12:58:15+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:58:28+07:00"
+  },
+  {
+    "result": "accepted",
+    "device_id": "device-100",
+    "message_id": "ac639895-6a1a-46c5-9ce0-140f067a80eb",
+    "generated_at": "2026-10-11T12:55:27+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:55:56+07:00"
+  },
+  {
+    "result": "accepted",
+    "device_id": "device-100",
+    "message_id": "31016c20-48e0-4f0f-b662-a36aa2ea914b",
+    "generated_at": "2026-10-11T12:53:34+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:53:43+07:00"
+  },
+  {
+    "result": "accepted",
+    "device_id": "device-100",
+    "message_id": "12726a58-67c5-4ce4-8398-46342e304c72",
+    "generated_at": "2026-10-11T12:51:12+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:51:23+07:00"
+  },
+  {
+    "result": "stale",
+    "device_id": "device-100",
+    "message_id": "703b7b36-7642-4a75-a6a4-39d514fa4103",
+    "generated_at": "2026-10-11T12:29:45+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:49:45+07:00"
+  },
+  {
+    "result": "accepted",
+    "device_id": "device-100",
+    "message_id": "b7f6cd9b-13ee-469b-82f8-3f9b2340dcdc",
+    "generated_at": "2026-10-11T12:48:38+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:48:55+07:00"
+  },
+  {
+    "result": "accepted",
+    "device_id": "device-100",
+    "message_id": "364a54d3-545d-419a-8672-de3282d62ea8",
+    "generated_at": "2026-10-11T12:45:09+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:45:09+07:00"
+  },
+  {
+    "result": "accepted",
+    "device_id": "device-100",
+    "message_id": "6f61f312-4a3c-40d2-aefc-24e2b31698d2",
+    "generated_at": "2026-10-11T12:44:00+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:44:16+07:00"
+  },
+  {
+    "result": "invalid",
+    "device_id": "device-100",
+    "message_id": "5d73a105-ba47-46e2-9738-411e5a677b76",
+    "generated_at": null,
+    "registration_no": null,
+    "first_received_at": "2026-10-11T12:44:13+07:00"
+  },
+  {
+    "result": "accepted",
+    "device_id": "device-100",
+    "message_id": "45c16c5d-de47-4385-bd8f-d422f853cae2",
+    "generated_at": "2026-10-11T12:36:25+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:36:41+07:00"
+  },
+  {
+    "result": "accepted",
+    "device_id": "device-100",
+    "message_id": "46ce4531-5659-4142-9540-b35eeb1e766a",
+    "generated_at": "2026-10-11T12:34:14+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:34:24+07:00"
+  },
+  {
+    "result": "accepted",
+    "device_id": "device-100",
+    "message_id": "3b1ad4b4-8950-477b-9a08-06f1dbfe70b4",
+    "generated_at": "2026-10-11T12:33:47+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:34:11+07:00"
+  },
+  {
+    "result": "accepted",
+    "device_id": "device-100",
+    "message_id": "522ebb11-ad0c-4523-8938-b6eb55c2c70a",
+    "generated_at": "2026-10-11T12:32:58+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:33:24+07:00"
+  },
+  {
+    "result": "accepted",
+    "device_id": "device-100",
+    "message_id": "d9aa5621-71da-4379-ab19-404a970b387b",
+    "generated_at": "2026-10-11T12:30:52+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:31:14+07:00"
+  },
+  {
+    "result": "accepted",
+    "device_id": "device-100",
+    "message_id": "8beec853-8aac-4273-ad87-8f3795a5a102",
+    "generated_at": "2026-10-11T12:30:23+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:30:34+07:00"
+  },
+  {
+    "result": "accepted",
+    "device_id": "device-100",
+    "message_id": "482aa600-4206-4338-af8e-bcff585a54e1",
+    "generated_at": "2026-10-11T12:30:21+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:30:34+07:00"
+  },
+  {
+    "result": "accepted",
+    "device_id": "device-100",
+    "message_id": "df67265f-e3e9-4744-aba2-683d55921537",
+    "generated_at": "2026-10-11T12:27:44+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:28:13+07:00"
+  },
+  {
+    "result": "accepted",
+    "device_id": "device-100",
+    "message_id": "2cb91eb4-0dd3-4cdb-8233-918c738bc691",
+    "generated_at": "2026-10-11T12:27:35+07:00",
+    "registration_no": "BUS-100",
+    "first_received_at": "2026-10-11T12:27:46+07:00"
+  }
+]

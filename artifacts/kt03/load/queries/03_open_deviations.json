@@ -1,0 +1,222 @@
+[
+  {
+    "id": 38171,
+    "kind": "late",
+    "trip_id": 11874,
+    "point_no": 19,
+    "detected_at": "2026-10-11T10:56:45+07:00",
+    "duty_number": "Н-02969",
+    "route_number": "М-05",
+    "measured_value": 15,
+    "registration_no": "BUS-069"
+  },
+  {
+    "id": 38170,
+    "kind": "late",
+    "trip_id": 11874,
+    "point_no": 18,
+    "detected_at": "2026-10-11T10:54:45+07:00",
+    "duty_number": "Н-02969",
+    "route_number": "М-05",
+    "measured_value": 15,
+    "registration_no": "BUS-069"
+  },
+  {
+    "id": 37876,
+    "kind": "late",
+    "trip_id": 11714,
+    "point_no": 20,
+    "detected_at": "2026-10-11T10:54:25+07:00",
+    "duty_number": "Н-02929",
+    "route_number": "М-01",
+    "measured_value": 14,
+    "registration_no": "BUS-029"
+  },
+  {
+    "id": 38350,
+    "kind": "late",
+    "trip_id": 11950,
+    "point_no": 20,
+    "detected_at": "2026-10-11T10:53:20+07:00",
+    "duty_number": "Н-02988",
+    "route_number": "М-01",
+    "measured_value": 8,
+    "registration_no": "BUS-088"
+  },
+  {
+    "id": 37637,
+    "kind": "late",
+    "trip_id": 11650,
+    "point_no": 20,
+    "detected_at": "2026-10-11T10:53:05+07:00",
+    "duty_number": "Н-02913",
+    "route_number": "М-10",
+    "measured_value": 14,
+    "registration_no": "BUS-013"
+  },
+  {
+    "id": 38289,
+    "kind": "late",
+    "trip_id": 11910,
+    "point_no": 19,
+    "detected_at": "2026-10-11T10:52:30+07:00",
+    "duty_number": "Н-02978",
+    "route_number": "М-01",
+    "measured_value": 10,
+    "registration_no": "BUS-078"
+  },
+  {
+    "id": 37875,
+    "kind": "late",
+    "trip_id": 11714,
+    "point_no": 19,
+    "detected_at": "2026-10-11T10:52:25+07:00",
+    "duty_number": "Н-02929",
+    "route_number": "М-01",
+    "measured_value": 14,
+    "registration_no": "BUS-029"
+  },
+  {
+    "id": 38349,
+    "kind": "late",
+    "trip_id": 11950,
+    "point_no": 19,
+    "detected_at": "2026-10-11T10:51:20+07:00",
+    "duty_number": "Н-02988",
+    "route_number": "М-01",
+    "measured_value": 8,
+    "registration_no": "BUS-088"
+  },
+  {
+    "id": 37953,
+    "kind": "late",
+    "trip_id": 11770,
+    "point_no": 17,
+    "detected_at": "2026-10-11T10:50:35+07:00",
+    "duty_number": "Н-02943",
+    "route_number": "М-01",
+    "measured_value": 15,
+    "registration_no": "BUS-043"
+  },
+  {
+    "id": 38288,
+    "kind": "late",
+    "trip_id": 11910,
+    "point_no": 18,
+    "detected_at": "2026-10-11T10:50:30+07:00",
+    "duty_number": "Н-02978",
+    "route_number": "М-01",
+    "measured_value": 10,
+    "registration_no": "BUS-078"
+  },
+  {
+    "id": 38032,
+    "kind": "late",
+    "trip_id": 11790,
+    "point_no": 19,
+    "detected_at": "2026-10-11T10:50:00+07:00",
+    "duty_number": "Н-02948",
+    "route_number": "М-02",
+    "measured_value": 10,
+    "registration_no": "BUS-048"
+  },
+  {
+    "id": 37757,
+    "kind": "late",
+    "trip_id": 11694,
+    "point_no": 20,
+    "detected_at": "2026-10-11T10:50:00+07:00",
+    "duty_number": "Н-02924",
+    "route_number": "М-01",
+    "measured_value": 10,
+    "registration_no": "BUS-024"
+  },
+  {
+    "id": 37777,
+    "kind": "late",
+    "trip_id": 11698,
+    "point_no": 20,
+    "detected_at": "2026-10-11T10:49:05+07:00",
+    "duty_number": "Н-02925",
+    "route_number": "М-01",
+    "measured_value": 9,
+    "registration_no": "BUS-025"
+  },
+  {
+    "id": 37952,
+    "kind": "late",
+    "trip_id": 11770,
+    "point_no": 16,
+    "detected_at": "2026-10-11T10:48:35+07:00",
+    "duty_number": "Н-02943",
+    "route_number": "М-01",
+    "measured_value": 15,
+    "registration_no": "BUS-043"
+  },
+  {
+    "id": 37873,
+    "kind": "late",
+    "trip_id": 11714,
+    "point_no": 17,
+    "detected_at": "2026-10-11T10:48:25+07:00",
+    "duty_number": "Н-02929",
+    "route_number": "М-01",
+    "measured_value": 14,
+    "registration_no": "BUS-029"
+  },
+  {
+    "id": 37815,
+    "kind": "late",
+    "trip_id": 11706,
+    "point_no": 19,
+    "detected_at": "2026-10-11T10:48:15+07:00",
+    "duty_number": "Н-02927",
+    "route_number": "М-01",
+    "measured_value": 10,
+    "registration_no": "BUS-027"
+  },
+  {
+    "id": 38031,
+    "kind": "late",
+    "trip_id": 11790,
+    "point_no": 18,
+    "detected_at": "2026-10-11T10:48:00+07:00",
+    "duty_number": "Н-02948",
+    "route_number": "М-02",
+    "measured_value": 10,
+    "registration_no": "BUS-048"
+  },
+  {
+    "id": 37756,
+    "kind": "late",
+    "trip_id": 11694,
+    "point_no": 19,
+    "detected_at": "2026-10-11T10:48:00+07:00",
+    "duty_number": "Н-02924",
+    "route_number": "М-01",
+    "measured_value": 10,
+    "registration_no": "BUS-024"
+  },
+  {
+    "id": 38071,
+    "kind": "late",
+    "trip_id": 11822,
+    "point_no": 18,
+    "detected_at": "2026-10-11T10:47:40+07:00",
+    "duty_number": "Н-02956",
+    "route_number": "М-01",
+    "measured_value": 9,
+    "registration_no": "BUS-056"
+  },
+  {
+    "id": 37716,
+    "kind": "late",
+    "trip_id": 11670,
+    "point_no": 19,
+    "detected_at": "2026-10-11T10:47:30+07:00",
+    "duty_number": "Н-02918",
+    "route_number": "М-01",
+    "measured_value": 10,
+    "registration_no": "BUS-018"
+  }
+]

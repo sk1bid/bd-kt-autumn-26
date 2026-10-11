@@ -1,3 +1,16 @@
 .DS_Store
 /bin/
 /submission/
+/data/
+.env
+.env.*
+/CLAUDE.md
+/AGENTS.md
+/.codex/
+/.agents/
+/artifacts/kt03/baseline/
+/artifacts/kt03/*.txt
+/artifacts/kt03/dev/*
+!/artifacts/kt03/dev/verification-dev.json
+/artifacts/kt03/scenarios/commit.txt
+/artifacts/kt03/scenarios/session-first.txt

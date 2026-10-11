@@ -1,5 +1,7 @@
-.DEFAULT_GOAL := up
-.PHONY: up down kt03-init kt03-reset kt03-dev kt03-load kt03-scenarios kt03-compare kt03-all kt03-package kt03-report
+.DEFAULT_GOAL := help
+.PHONY: help up down kt03-init kt03-reset kt03-dev kt03-load kt03-scenarios kt03-compare kt03-all kt03-package kt03-report
+help:
+	@printf '%s\n' 'КТ-03 — мониторинг транспорта' '' 'make kt03-all        Полностью воспроизвести КТ-03' 'make kt03-dev        Набор разработки: 75 000 сообщений' 'make kt03-load       Нагрузочный набор: 3 млн сообщений' 'make kt03-scenarios  Транзакции и конкурентность' 'make kt03-report     Пересобрать отчёт из результатов' 'make kt03-package    Собрать архив сдачи' 'make down            Остановить PostgreSQL' '' 'Отчёт: docs/kt03/01-report.md'
 up:
 	docker compose --profile test up -d --wait
 down:

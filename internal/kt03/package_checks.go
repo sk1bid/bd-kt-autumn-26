@@ -11,7 +11,7 @@ import (
 var benchmarkNames = []string{"schedule", "history_hot", "history_rare"}
 
 func requiredPackageFiles() []string {
-	paths := []string{"docs/kt03/01-report.md", "docs/kt03/report.tmpl", "go.mod", "compose.yaml", "kt03.mk",
+	paths := []string{"docs/kt03/README.md", "docs/kt03/01-report.md", "docs/kt03/report.tmpl", "go.mod", "compose.yaml", "internal/kt03/tasks.mk", "artifacts/kt03/README.md",
 		"sql/kt03/check_business_rules.sql", "sql/kt03/queries/01_schedule_before.sql", "sql/kt03/optimize.sql",
 		"sql/kt03/scenarios/commit.sql", "sql/kt03/scenarios/rollback.sql", "sql/kt03/scenarios/locks.sql",
 		"artifacts/kt03/environment.json", "artifacts/kt03/pilot.json", "artifacts/kt03/load-comparison.json",

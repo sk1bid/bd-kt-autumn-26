@@ -1,0 +1,15 @@
+{
+  "archived_wal": "00000001000000000000000B",
+  "base_backup_verified": true,
+  "last_replayed_commit": "2026-11-04 12:44:11.195566+00",
+  "model": "PASS",
+  "primary_markers": [
+    "after-target",
+    "before-target"
+  ],
+  "promoted": true,
+  "recovered_markers": [
+    "before-target"
+  ],
+  "target_utc": "2026-11-04T12:44:11.270209+00:00"
+}

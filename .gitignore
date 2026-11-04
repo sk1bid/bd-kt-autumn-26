@@ -14,3 +14,13 @@
 !/artifacts/kt03/dev/verification-dev.json
 /artifacts/kt03/scenarios/commit.txt
 /artifacts/kt03/scenarios/session-first.txt
+/planning/
+/learning/
+/web/
+/secrets/
+/docs/kt04/live-guide.md
+*.password
+*.pgpass
+*.key
+*.pem
+*.dump

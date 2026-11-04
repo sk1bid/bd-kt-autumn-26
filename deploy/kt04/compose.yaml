@@ -1,0 +1,148 @@
+name: transport-kt04
+
+x-postgres: &postgres
+  image: postgres:17-alpine@sha256:266d3c257594e195b309ae9d1805e54c788f1d7b375f56bf6c367aac6c917e7b
+  entrypoint: [sh, /work/deploy/kt04/entrypoint.sh]
+  environment:
+    PGDATA: /var/lib/postgresql/data/pgdata
+  tmpfs:
+    - /run/kt04:mode=0755
+  healthcheck:
+    test: [CMD, pg_isready, -d, "host=localhost dbname=postgres user=postgres sslmode=verify-full sslrootcert=/run/kt04/ca.crt passfile=/run/secrets/postgres.pgpass"]
+    interval: 2s
+    timeout: 3s
+    retries: 30
+
+services:
+  primary:
+    <<: *postgres
+    command: [primary]
+    ports: ["127.0.0.1:55404:5432"]
+    volumes:
+      - &workspace ../..:/work:ro
+      - primary-data:/var/lib/postgresql/data
+      - wal-archive:/wal-archive
+    secrets:
+      - &ca {source: ca, target: ca.crt}
+      - {source: primary_cert, target: server.crt}
+      - {source: primary_key, target: server.key}
+      - &bootstrap {source: bootstrap, target: postgres.password}
+      - &postgres_pass {source: postgres_pass, target: postgres.pgpass}
+      - &admin_pass {source: admin_pass, target: kt04_admin.pgpass}
+      - &app_pass {source: app_pass, target: kt04_app.pgpass}
+      - &analyst_pass {source: analyst_pass, target: kt04_analyst.pgpass}
+      - &driver1_pass {source: driver1_pass, target: kt04_driver1.pgpass}
+      - &driver2_pass {source: driver2_pass, target: kt04_driver2.pgpass}
+  client:
+    image: postgres:17-alpine@sha256:266d3c257594e195b309ae9d1805e54c788f1d7b375f56bf6c367aac6c917e7b
+    entrypoint: [sleep, infinity]
+    volumes:
+      - *workspace
+    secrets:
+      - *ca
+      - *postgres_pass
+      - *app_pass
+      - *analyst_pass
+  replica:
+    <<: *postgres
+    command: [replica]
+    depends_on:
+      primary:
+        condition: service_healthy
+    ports: ["127.0.0.1:55405:5432"]
+    volumes:
+      - *workspace
+      - replica-data:/var/lib/postgresql/data
+    secrets:
+      - *ca
+      - {source: replica_cert, target: server.crt}
+      - {source: replica_key, target: server.key}
+      - {source: replication_pass, target: kt04_replicator.pgpass}
+      - *postgres_pass
+      - *admin_pass
+      - *app_pass
+      - *analyst_pass
+      - *driver1_pass
+      - *driver2_pass
+  restore:
+    <<: *postgres
+    profiles: [restore]
+    command: [restore]
+    ports: ["127.0.0.1:55406:5432"]
+    volumes:
+      - *workspace
+      - restore-data:/var/lib/postgresql/data
+    secrets:
+      - *ca
+      - {source: restore_cert, target: server.crt}
+      - {source: restore_key, target: server.key}
+      - *bootstrap
+      - *postgres_pass
+      - *admin_pass
+      - *app_pass
+      - *analyst_pass
+      - *driver1_pass
+      - *driver2_pass
+  pitr:
+    <<: *postgres
+    profiles: [pitr]
+    command: [pitr]
+    ports: ["127.0.0.1:55407:5432"]
+    volumes:
+      - *workspace
+      - pitr-data:/var/lib/postgresql/data
+      - wal-archive:/wal-archive:ro
+    secrets:
+      - *ca
+      - {source: replication_pass, target: kt04_replicator.pgpass}
+      - {source: pitr_cert, target: server.crt}
+      - {source: pitr_key, target: server.key}
+      - *postgres_pass
+      - *admin_pass
+      - *app_pass
+      - *analyst_pass
+      - *driver1_pass
+      - *driver2_pass
+
+secrets:
+  ca:
+    file: ${KT04_SECRETS_DIR:-/private/tmp/transport-kt04-secrets}/ca.crt
+  bootstrap:
+    file: ${KT04_SECRETS_DIR:-/private/tmp/transport-kt04-secrets}/postgres.password
+  postgres_pass:
+    file: ${KT04_SECRETS_DIR:-/private/tmp/transport-kt04-secrets}/postgres.pgpass
+  admin_pass:
+    file: ${KT04_SECRETS_DIR:-/private/tmp/transport-kt04-secrets}/kt04_admin.pgpass
+  app_pass:
+    file: ${KT04_SECRETS_DIR:-/private/tmp/transport-kt04-secrets}/kt04_app.pgpass
+  analyst_pass:
+    file: ${KT04_SECRETS_DIR:-/private/tmp/transport-kt04-secrets}/kt04_analyst.pgpass
+  driver1_pass:
+    file: ${KT04_SECRETS_DIR:-/private/tmp/transport-kt04-secrets}/kt04_driver1.pgpass
+  driver2_pass:
+    file: ${KT04_SECRETS_DIR:-/private/tmp/transport-kt04-secrets}/kt04_driver2.pgpass
+  replication_pass:
+    file: ${KT04_SECRETS_DIR:-/private/tmp/transport-kt04-secrets}/kt04_replicator.pgpass
+  primary_cert:
+    file: ${KT04_SECRETS_DIR:-/private/tmp/transport-kt04-secrets}/primary.crt
+  primary_key:
+    file: ${KT04_SECRETS_DIR:-/private/tmp/transport-kt04-secrets}/primary.key
+  replica_cert:
+    file: ${KT04_SECRETS_DIR:-/private/tmp/transport-kt04-secrets}/replica.crt
+  replica_key:
+    file: ${KT04_SECRETS_DIR:-/private/tmp/transport-kt04-secrets}/replica.key
+  restore_cert:
+    file: ${KT04_SECRETS_DIR:-/private/tmp/transport-kt04-secrets}/restore.crt
+  restore_key:
+    file: ${KT04_SECRETS_DIR:-/private/tmp/transport-kt04-secrets}/restore.key
+  pitr_cert:
+    file: ${KT04_SECRETS_DIR:-/private/tmp/transport-kt04-secrets}/pitr.crt
+  pitr_key:
+    file: ${KT04_SECRETS_DIR:-/private/tmp/transport-kt04-secrets}/pitr.key
+
+volumes:
+  primary-data:
+  replica-data:
+  restore-data:
+  pitr-data:
+  wal-archive:

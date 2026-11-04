@@ -1,0 +1,235 @@
+{
+  "dump_sha256": "3fcfe8974d076d2eedeab5c2804a82fdf41e6f90137726f6f4e412ca3ca55974",
+  "identical": true,
+  "identity_and_constraint": "PASS",
+  "model": "PASS",
+  "restored": {
+    "database_acl": "postgres|kt04_admin=c/postgres,kt04_analyst=c/postgres,kt04_app=c/postgres,kt04_driver1=c/postgres,kt04_driver2=c/postgres,postgres=CTc/postgres",
+    "migrations": "1|001_schema.sql|85bf0fec34f7e8e6238b241664f3c31a6b5179686d467f9701137e60add02884\n2|002_operations.sql|1e5030557823082371c01bf28e28502639ec6bc30993f4a9e8ff18b0e78b5cca\n3|003_reporting.sql|7b99238f8100252c2c91021d0cad6ab5ab8dc03d908e59ddebd13b4f99a3988b\n4|004_integrity.sql|56fd34d0fd871d7de930892b708cead37ceb3be2a16c862153bb205cda624af4\n5|005_batch_validation.sql|404abea2296e92877554f5f4141d78918883bf5b43c7ebeada0c5cbaaf94c1ab",
+    "owners_acl": "transport|app_user|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=arw/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|app_user_driver_id_key|kt04_owner|\ntransport|app_user_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|app_user_login_key|kt04_owner|\ntransport|app_user_pkey|kt04_owner|\ntransport|assignment|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|assignment_duty|kt04_owner|\ntransport|assignment_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|assignment_pkey|kt04_owner|\ntransport|assignment_trip_id_tstzrange_excl|kt04_owner|\ntransport|connection_state|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=rw/kt04_owner\ntransport|connection_state_pkey|kt04_owner|\ntransport|current_position|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=arw/kt04_owner\ntransport|current_position_pkey|kt04_owner|\ntransport|deviation|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_app=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=ar/kt04_owner\ntransport|deviation_duty|kt04_owner|\ntransport|deviation_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|deviation_pkey|kt04_owner|\ntransport|device|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=arw/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|device_installation|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=ar/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|device_installation_device_id_tstzrange_excl|kt04_owner|\ntransport|device_installation_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|device_installation_pkey|kt04_owner|\ntransport|device_installation_vehicle_id_tstzrange_excl|kt04_owner|\ntransport|device_pkey|kt04_owner|\ntransport|driver|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=arw/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|driver_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|driver_license_no_key|kt04_owner|\ntransport|driver_pkey|kt04_owner|\ntransport|duty|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_driver1=r/kt04_owner,kt04_driver2=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|duty_driver_id_plan_span_excl|kt04_owner|\ntransport|duty_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|duty_number_key|kt04_owner|\ntransport|duty_pkey|kt04_owner|\ntransport|duty_plan|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|duty_vehicle_id_plan_span_excl|kt04_owner|\ntransport|execution|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|execution_pkey|kt04_owner|\ntransport|execution_review_due|kt04_owner|\ntransport|message_key|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=arw/kt04_owner\ntransport|message_key_first_receipt_id_key|kt04_owner|\ntransport|message_key_pkey|kt04_owner|\ntransport|message_key_retention|kt04_owner|\ntransport|one_connection_episode|kt04_owner|\ntransport|one_current_assignment|kt04_owner|\ntransport|one_driver_on_line|kt04_owner|\ntransport|one_timing_deviation|kt04_owner|\ntransport|one_trip_deviation|kt04_owner|\ntransport|one_vehicle_on_line|kt04_owner|\ntransport|operation_request|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_app=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|operation_request_pkey|kt04_owner|\ntransport|passage|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=ar/kt04_owner\ntransport|passage_assessment|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|passage_correction|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|passage_correction_pkey|kt04_owner|\ntransport|passage_pkey|kt04_owner|\ntransport|passage_source_device_id_source_message_id_key|kt04_owner|\ntransport|planned_trip|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|planned_trip_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|planned_trip_pkey|kt04_owner|\ntransport|planned_trip_route_id_starts_at_key|kt04_owner|\ntransport|planning_guard|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|planning_guard_pkey|kt04_owner|\ntransport|role|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|role_pkey|kt04_owner|\ntransport|route|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=arw/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|route_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|route_number_direction_key|kt04_owner|\ntransport|route_pkey|kt04_owner|\ntransport|route_point|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=arwd/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|route_point_pkey|kt04_owner|\ntransport|stop|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=arw/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|stop_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|stop_name_latitude_longitude_key|kt04_owner|\ntransport|stop_pkey|kt04_owner|\ntransport|trip_decision|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|trip_decision_pkey|kt04_owner|\ntransport|trip_period|kt04_owner|\ntransport|trip_point|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|trip_point_pkey|kt04_owner|\ntransport|trip_point_stop|kt04_owner|\ntransport|trip_summary|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_app=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|user_role|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=ard/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|user_role_pkey|kt04_owner|\ntransport|vehicle|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=arw/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|vehicle_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|vehicle_pkey|kt04_owner|\ntransport|vehicle_registration_no_key|kt04_owner|\ntransport_private|driver_login|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner\ntransport_private|driver_login_driver_id_key|kt04_owner|\ntransport_private|driver_login_pkey|kt04_owner|\ntransport_private|duty_status_audit|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner\ntransport_private|duty_status_audit_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport_private|duty_status_audit_pkey|kt04_owner|\ntransport_private|model_check_queue|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner\ntransport_private|model_check_queue_pkey|kt04_owner|",
+    "sequences": "transport|app_user_id_seq|3\ntransport|assignment_id_seq|3\ntransport|deviation_id_seq|\ntransport|device_installation_id_seq|3\ntransport|driver_id_seq|3\ntransport|duty_id_seq|3\ntransport|planned_trip_id_seq|4\ntransport|route_id_seq|1\ntransport|stop_id_seq|3\ntransport|vehicle_id_seq|3\ntransport_private|duty_status_audit_id_seq|",
+    "transport.app_user": {
+      "rows": 3,
+      "sha256": "9308ca44e0b919c6fa5769b0e8bc5ed1e895258fac0d9213589f89e65901087a"
+    },
+    "transport.assignment": {
+      "rows": 3,
+      "sha256": "615a36d627d00d44342aadf9f802fee943863a2055776f9309feedfef3a49985"
+    },
+    "transport.connection_state": {
+      "rows": 3,
+      "sha256": "7a37823af4c841c2adb7d7346d8a423ea53cb7815804209e488793ad974ed661"
+    },
+    "transport.current_position": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "transport.deviation": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "transport.device": {
+      "rows": 3,
+      "sha256": "f0901f3d73b16aa91eccb812de90fe532f8bc2653fa50cdf4c1cca8c837fdefa"
+    },
+    "transport.device_installation": {
+      "rows": 3,
+      "sha256": "cebe9c30f02ba35ce23589ca86619a7eb8405e37748a1b5a0a01d342cd4b43b4"
+    },
+    "transport.driver": {
+      "rows": 3,
+      "sha256": "79ddab4bb0c7d4102841cd0bfa87d34f23a75fc9690d0a3e55b1a932f9e7d496"
+    },
+    "transport.duty": {
+      "rows": 3,
+      "sha256": "5d161ff069c68986d6375b9a72980bf4d2f0eeb20c836bb45b3c5dcc05061479"
+    },
+    "transport.execution": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "transport.message_key": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "transport.operation_request": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "transport.passage": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "transport.passage_correction": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "transport.planned_trip": {
+      "rows": 4,
+      "sha256": "6e9d6ab04f93dbeff2af94a49d7ad64392e7c3299b3b41af0cc2274c15508cb2"
+    },
+    "transport.planning_guard": {
+      "rows": 1,
+      "sha256": "51bc513113548e062ada62b03efea153cae2abdf46b051c551c3e62a4dfb88cf"
+    },
+    "transport.role": {
+      "rows": 4,
+      "sha256": "0cb406bde011accf3b4c555f6bb6428cd952d967a4d18befecfcbc7ae6a379ba"
+    },
+    "transport.route": {
+      "rows": 1,
+      "sha256": "4fdb37167957f42eb3830131352601a1a5a4b91f1bae69dc61634d87346f3155"
+    },
+    "transport.route_point": {
+      "rows": 3,
+      "sha256": "36b62e6c67b86d86350150b95376bd9606e3dd97e4255307974573f20e60ff62"
+    },
+    "transport.stop": {
+      "rows": 3,
+      "sha256": "5aa5efe0e48cc0d137048a33c5ea4239295fc17ecd184db2d3522cdf2b69bc1c"
+    },
+    "transport.trip_decision": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "transport.trip_point": {
+      "rows": 12,
+      "sha256": "478b5a3e0b451c06574bb36fa5e0eb5b244c03e39a574ec11e5ffeb2dcd30f9c"
+    },
+    "transport.user_role": {
+      "rows": 3,
+      "sha256": "482baf8bbb9aeb6d6bc1017ef7d1d536940f6a33cb8adfa9e4b8057025a80116"
+    },
+    "transport.vehicle": {
+      "rows": 3,
+      "sha256": "14dda7c5ea7fde46f9ff06a3a1014fa23670564b437c1d72fd08865131436c3a"
+    },
+    "transport_private.driver_login": {
+      "rows": 2,
+      "sha256": "ec860fd8ae9a46286b78bed47151e1dc9416886f6a5f7a79c96c9902125503b3"
+    },
+    "transport_private.duty_status_audit": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "transport_private.model_check_queue": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "role_login_and_denial": "PASS",
+  "source": {
+    "database_acl": "postgres|kt04_admin=c/postgres,kt04_analyst=c/postgres,kt04_app=c/postgres,kt04_driver1=c/postgres,kt04_driver2=c/postgres,postgres=CTc/postgres",
+    "migrations": "1|001_schema.sql|85bf0fec34f7e8e6238b241664f3c31a6b5179686d467f9701137e60add02884\n2|002_operations.sql|1e5030557823082371c01bf28e28502639ec6bc30993f4a9e8ff18b0e78b5cca\n3|003_reporting.sql|7b99238f8100252c2c91021d0cad6ab5ab8dc03d908e59ddebd13b4f99a3988b\n4|004_integrity.sql|56fd34d0fd871d7de930892b708cead37ceb3be2a16c862153bb205cda624af4\n5|005_batch_validation.sql|404abea2296e92877554f5f4141d78918883bf5b43c7ebeada0c5cbaaf94c1ab",
+    "owners_acl": "transport|app_user|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=arw/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|app_user_driver_id_key|kt04_owner|\ntransport|app_user_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|app_user_login_key|kt04_owner|\ntransport|app_user_pkey|kt04_owner|\ntransport|assignment|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|assignment_duty|kt04_owner|\ntransport|assignment_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|assignment_pkey|kt04_owner|\ntransport|assignment_trip_id_tstzrange_excl|kt04_owner|\ntransport|connection_state|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=rw/kt04_owner\ntransport|connection_state_pkey|kt04_owner|\ntransport|current_position|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=arw/kt04_owner\ntransport|current_position_pkey|kt04_owner|\ntransport|deviation|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_app=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=ar/kt04_owner\ntransport|deviation_duty|kt04_owner|\ntransport|deviation_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|deviation_pkey|kt04_owner|\ntransport|device|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=arw/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|device_installation|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=ar/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|device_installation_device_id_tstzrange_excl|kt04_owner|\ntransport|device_installation_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|device_installation_pkey|kt04_owner|\ntransport|device_installation_vehicle_id_tstzrange_excl|kt04_owner|\ntransport|device_pkey|kt04_owner|\ntransport|driver|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=arw/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|driver_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|driver_license_no_key|kt04_owner|\ntransport|driver_pkey|kt04_owner|\ntransport|duty|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_driver1=r/kt04_owner,kt04_driver2=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|duty_driver_id_plan_span_excl|kt04_owner|\ntransport|duty_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|duty_number_key|kt04_owner|\ntransport|duty_pkey|kt04_owner|\ntransport|duty_plan|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|duty_vehicle_id_plan_span_excl|kt04_owner|\ntransport|execution|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|execution_pkey|kt04_owner|\ntransport|execution_review_due|kt04_owner|\ntransport|message_key|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=arw/kt04_owner\ntransport|message_key_first_receipt_id_key|kt04_owner|\ntransport|message_key_pkey|kt04_owner|\ntransport|message_key_retention|kt04_owner|\ntransport|one_connection_episode|kt04_owner|\ntransport|one_current_assignment|kt04_owner|\ntransport|one_driver_on_line|kt04_owner|\ntransport|one_timing_deviation|kt04_owner|\ntransport|one_trip_deviation|kt04_owner|\ntransport|one_vehicle_on_line|kt04_owner|\ntransport|operation_request|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_app=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|operation_request_pkey|kt04_owner|\ntransport|passage|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=ar/kt04_owner\ntransport|passage_assessment|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|passage_correction|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|passage_correction_pkey|kt04_owner|\ntransport|passage_pkey|kt04_owner|\ntransport|passage_source_device_id_source_message_id_key|kt04_owner|\ntransport|planned_trip|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|planned_trip_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|planned_trip_pkey|kt04_owner|\ntransport|planned_trip_route_id_starts_at_key|kt04_owner|\ntransport|planning_guard|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|planning_guard_pkey|kt04_owner|\ntransport|role|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|role_pkey|kt04_owner|\ntransport|route|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=arw/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|route_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|route_number_direction_key|kt04_owner|\ntransport|route_pkey|kt04_owner|\ntransport|route_point|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=arwd/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|route_point_pkey|kt04_owner|\ntransport|stop|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=arw/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|stop_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|stop_name_latitude_longitude_key|kt04_owner|\ntransport|stop_pkey|kt04_owner|\ntransport|trip_decision|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|trip_decision_pkey|kt04_owner|\ntransport|trip_period|kt04_owner|\ntransport|trip_point|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|trip_point_pkey|kt04_owner|\ntransport|trip_point_stop|kt04_owner|\ntransport|trip_summary|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_app=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=r/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|user_role|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=ard/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|user_role_pkey|kt04_owner|\ntransport|vehicle|kt04_owner|kt04_admin=r/kt04_owner,kt04_analyst=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner,transport_app=arw/kt04_owner,transport_telemetry=r/kt04_owner\ntransport|vehicle_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport|vehicle_pkey|kt04_owner|\ntransport|vehicle_registration_no_key|kt04_owner|\ntransport_private|driver_login|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner\ntransport_private|driver_login_driver_id_key|kt04_owner|\ntransport_private|driver_login_pkey|kt04_owner|\ntransport_private|duty_status_audit|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner\ntransport_private|duty_status_audit_id_seq|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=rwU/kt04_owner\ntransport_private|duty_status_audit_pkey|kt04_owner|\ntransport_private|model_check_queue|kt04_owner|kt04_admin=r/kt04_owner,kt04_owner=arwdDxtm/kt04_owner\ntransport_private|model_check_queue_pkey|kt04_owner|",
+    "sequences": "transport|app_user_id_seq|3\ntransport|assignment_id_seq|3\ntransport|deviation_id_seq|\ntransport|device_installation_id_seq|3\ntransport|driver_id_seq|3\ntransport|duty_id_seq|3\ntransport|planned_trip_id_seq|4\ntransport|route_id_seq|1\ntransport|stop_id_seq|3\ntransport|vehicle_id_seq|3\ntransport_private|duty_status_audit_id_seq|",
+    "transport.app_user": {
+      "rows": 3,
+      "sha256": "9308ca44e0b919c6fa5769b0e8bc5ed1e895258fac0d9213589f89e65901087a"
+    },
+    "transport.assignment": {
+      "rows": 3,
+      "sha256": "615a36d627d00d44342aadf9f802fee943863a2055776f9309feedfef3a49985"
+    },
+    "transport.connection_state": {
+      "rows": 3,
+      "sha256": "7a37823af4c841c2adb7d7346d8a423ea53cb7815804209e488793ad974ed661"
+    },
+    "transport.current_position": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "transport.deviation": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "transport.device": {
+      "rows": 3,
+      "sha256": "f0901f3d73b16aa91eccb812de90fe532f8bc2653fa50cdf4c1cca8c837fdefa"
+    },
+    "transport.device_installation": {
+      "rows": 3,
+      "sha256": "cebe9c30f02ba35ce23589ca86619a7eb8405e37748a1b5a0a01d342cd4b43b4"
+    },
+    "transport.driver": {
+      "rows": 3,
+      "sha256": "79ddab4bb0c7d4102841cd0bfa87d34f23a75fc9690d0a3e55b1a932f9e7d496"
+    },
+    "transport.duty": {
+      "rows": 3,
+      "sha256": "5d161ff069c68986d6375b9a72980bf4d2f0eeb20c836bb45b3c5dcc05061479"
+    },
+    "transport.execution": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "transport.message_key": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "transport.operation_request": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "transport.passage": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "transport.passage_correction": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "transport.planned_trip": {
+      "rows": 4,
+      "sha256": "6e9d6ab04f93dbeff2af94a49d7ad64392e7c3299b3b41af0cc2274c15508cb2"
+    },
+    "transport.planning_guard": {
+      "rows": 1,
+      "sha256": "51bc513113548e062ada62b03efea153cae2abdf46b051c551c3e62a4dfb88cf"
+    },
+    "transport.role": {
+      "rows": 4,
+      "sha256": "0cb406bde011accf3b4c555f6bb6428cd952d967a4d18befecfcbc7ae6a379ba"
+    },
+    "transport.route": {
+      "rows": 1,
+      "sha256": "4fdb37167957f42eb3830131352601a1a5a4b91f1bae69dc61634d87346f3155"
+    },
+    "transport.route_point": {
+      "rows": 3,
+      "sha256": "36b62e6c67b86d86350150b95376bd9606e3dd97e4255307974573f20e60ff62"
+    },
+    "transport.stop": {
+      "rows": 3,
+      "sha256": "5aa5efe0e48cc0d137048a33c5ea4239295fc17ecd184db2d3522cdf2b69bc1c"
+    },
+    "transport.trip_decision": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "transport.trip_point": {
+      "rows": 12,
+      "sha256": "478b5a3e0b451c06574bb36fa5e0eb5b244c03e39a574ec11e5ffeb2dcd30f9c"
+    },
+    "transport.user_role": {
+      "rows": 3,
+      "sha256": "482baf8bbb9aeb6d6bc1017ef7d1d536940f6a33cb8adfa9e4b8057025a80116"
+    },
+    "transport.vehicle": {
+      "rows": 3,
+      "sha256": "14dda7c5ea7fde46f9ff06a3a1014fa23670564b437c1d72fd08865131436c3a"
+    },
+    "transport_private.driver_login": {
+      "rows": 2,
+      "sha256": "ec860fd8ae9a46286b78bed47151e1dc9416886f6a5f7a79c96c9902125503b3"
+    },
+    "transport_private.duty_status_audit": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "transport_private.model_check_queue": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

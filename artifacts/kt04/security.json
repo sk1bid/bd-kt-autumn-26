@@ -1,0 +1,340 @@
+[
+  {
+    "test": "real LOGIN",
+    "role": "kt04_admin",
+    "ok": true,
+    "output": "kt04_admin/kt04_admin"
+  },
+  {
+    "test": "restricted role attributes",
+    "role": "kt04_admin",
+    "ok": true,
+    "output": "t"
+  },
+  {
+    "test": "no membership in other application or privileged roles",
+    "role": "kt04_admin",
+    "ok": true,
+    "output": "t"
+  },
+  {
+    "test": "deny SET ROLE postgres",
+    "role": "kt04_admin",
+    "ok": true,
+    "error": "ERROR:  42501: permission denied to set role \"postgres\"\nLOCATION:  call_string_check_hook, guc.c:6938"
+  },
+  {
+    "test": "real LOGIN",
+    "role": "kt04_app",
+    "ok": true,
+    "output": "kt04_app/kt04_app"
+  },
+  {
+    "test": "restricted role attributes",
+    "role": "kt04_app",
+    "ok": true,
+    "output": "t"
+  },
+  {
+    "test": "no membership in other application or privileged roles",
+    "role": "kt04_app",
+    "ok": true,
+    "output": "t"
+  },
+  {
+    "test": "deny SET ROLE postgres",
+    "role": "kt04_app",
+    "ok": true,
+    "error": "ERROR:  42501: permission denied to set role \"postgres\"\nLOCATION:  call_string_check_hook, guc.c:6938"
+  },
+  {
+    "test": "real LOGIN",
+    "role": "kt04_analyst",
+    "ok": true,
+    "output": "kt04_analyst/kt04_analyst"
+  },
+  {
+    "test": "restricted role attributes",
+    "role": "kt04_analyst",
+    "ok": true,
+    "output": "t"
+  },
+  {
+    "test": "no membership in other application or privileged roles",
+    "role": "kt04_analyst",
+    "ok": true,
+    "output": "t"
+  },
+  {
+    "test": "deny SET ROLE postgres",
+    "role": "kt04_analyst",
+    "ok": true,
+    "error": "ERROR:  42501: permission denied to set role \"postgres\"\nLOCATION:  call_string_check_hook, guc.c:6938"
+  },
+  {
+    "test": "real LOGIN",
+    "role": "kt04_driver1",
+    "ok": true,
+    "output": "kt04_driver1/kt04_driver1"
+  },
+  {
+    "test": "restricted role attributes",
+    "role": "kt04_driver1",
+    "ok": true,
+    "output": "t"
+  },
+  {
+    "test": "no membership in other application or privileged roles",
+    "role": "kt04_driver1",
+    "ok": true,
+    "output": "t"
+  },
+  {
+    "test": "deny SET ROLE postgres",
+    "role": "kt04_driver1",
+    "ok": true,
+    "error": "ERROR:  42501: permission denied to set role \"postgres\"\nLOCATION:  call_string_check_hook, guc.c:6938"
+  },
+  {
+    "test": "real LOGIN",
+    "role": "kt04_driver2",
+    "ok": true,
+    "output": "kt04_driver2/kt04_driver2"
+  },
+  {
+    "test": "restricted role attributes",
+    "role": "kt04_driver2",
+    "ok": true,
+    "output": "t"
+  },
+  {
+    "test": "no membership in other application or privileged roles",
+    "role": "kt04_driver2",
+    "ok": true,
+    "output": "t"
+  },
+  {
+    "test": "deny SET ROLE postgres",
+    "role": "kt04_driver2",
+    "ok": true,
+    "error": "ERROR:  42501: permission denied to set role \"postgres\"\nLOCATION:  call_string_check_hook, guc.c:6938"
+  },
+  {
+    "test": "read duties",
+    "role": "kt04_admin",
+    "ok": true,
+    "output": "3"
+  },
+  {
+    "test": "deny CREATE ROLE",
+    "role": "kt04_admin",
+    "ok": true,
+    "output": "BEGIN",
+    "error": "ERROR:  42501: permission denied to create role\nDETAIL:  Only roles with the CREATEROLE attribute may create roles.\nLOCATION:  CreateRole, user.c:316"
+  },
+  {
+    "test": "deny direct duty status update",
+    "role": "kt04_admin",
+    "ok": true,
+    "error": "ERROR:  42501: permission denied for table duty\nLOCATION:  aclcheck_error, aclchk.c:2843"
+  },
+  {
+    "test": "read duties",
+    "role": "kt04_app",
+    "ok": true,
+    "output": "3"
+  },
+  {
+    "test": "deny CREATE ROLE",
+    "role": "kt04_app",
+    "ok": true,
+    "output": "BEGIN",
+    "error": "ERROR:  42501: permission denied to create role\nDETAIL:  Only roles with the CREATEROLE attribute may create roles.\nLOCATION:  CreateRole, user.c:316"
+  },
+  {
+    "test": "deny direct duty status update",
+    "role": "kt04_app",
+    "ok": true,
+    "error": "ERROR:  42501: permission denied for table duty\nLOCATION:  aclcheck_error, aclchk.c:2843"
+  },
+  {
+    "test": "read duties",
+    "role": "kt04_analyst",
+    "ok": true,
+    "output": "3"
+  },
+  {
+    "test": "deny CREATE ROLE",
+    "role": "kt04_analyst",
+    "ok": true,
+    "output": "BEGIN",
+    "error": "ERROR:  42501: permission denied to create role\nDETAIL:  Only roles with the CREATEROLE attribute may create roles.\nLOCATION:  CreateRole, user.c:316"
+  },
+  {
+    "test": "deny direct duty status update",
+    "role": "kt04_analyst",
+    "ok": true,
+    "error": "ERROR:  42501: permission denied for table duty\nLOCATION:  aclcheck_error, aclchk.c:2843"
+  },
+  {
+    "test": "RLS exposes own duty",
+    "role": "kt04_driver1",
+    "ok": true,
+    "output": "1"
+  },
+  {
+    "test": "RLS hides other duties",
+    "role": "kt04_driver1",
+    "ok": true,
+    "output": "0"
+  },
+  {
+    "test": "RLS DDL denied",
+    "role": "kt04_driver1",
+    "ok": true,
+    "output": "BEGIN",
+    "error": "ERROR:  42501: must be owner of table duty\nLOCATION:  aclcheck_error, aclchk.c:2981"
+  },
+  {
+    "test": "row_security=off cannot bypass policy",
+    "role": "kt04_driver1",
+    "ok": true,
+    "output": "SET",
+    "error": "ERROR:  42501: query would be affected by row-level security policy for table \"duty\"\nLOCATION:  check_enable_rls, rls.c:125"
+  },
+  {
+    "test": "deny owner-backed duty view",
+    "role": "kt04_driver1",
+    "ok": true,
+    "error": "ERROR:  42501: permission denied for view duty_plan\nLOCATION:  aclcheck_error, aclchk.c:2843"
+  },
+  {
+    "test": "deny duty update",
+    "role": "kt04_driver1",
+    "ok": true,
+    "error": "ERROR:  42501: permission denied for table duty\nLOCATION:  aclcheck_error, aclchk.c:2843"
+  },
+  {
+    "test": "RLS exposes own duty",
+    "role": "kt04_driver2",
+    "ok": true,
+    "output": "2"
+  },
+  {
+    "test": "RLS hides other duties",
+    "role": "kt04_driver2",
+    "ok": true,
+    "output": "0"
+  },
+  {
+    "test": "RLS DDL denied",
+    "role": "kt04_driver2",
+    "ok": true,
+    "output": "BEGIN",
+    "error": "ERROR:  42501: must be owner of table duty\nLOCATION:  aclcheck_error, aclchk.c:2981"
+  },
+  {
+    "test": "row_security=off cannot bypass policy",
+    "role": "kt04_driver2",
+    "ok": true,
+    "output": "SET",
+    "error": "ERROR:  42501: query would be affected by row-level security policy for table \"duty\"\nLOCATION:  check_enable_rls, rls.c:125"
+  },
+  {
+    "test": "deny owner-backed duty view",
+    "role": "kt04_driver2",
+    "ok": true,
+    "error": "ERROR:  42501: permission denied for view duty_plan\nLOCATION:  aclcheck_error, aclchk.c:2843"
+  },
+  {
+    "test": "deny duty update",
+    "role": "kt04_driver2",
+    "ok": true,
+    "error": "ERROR:  42501: permission denied for table duty\nLOCATION:  aclcheck_error, aclchk.c:2843"
+  },
+  {
+    "test": "admin can monitor",
+    "role": "kt04_admin",
+    "ok": true,
+    "output": "t"
+  },
+  {
+    "test": "admin can read audit",
+    "role": "kt04_admin",
+    "ok": true,
+    "output": "t"
+  },
+  {
+    "test": "admin cannot alter audit",
+    "role": "kt04_admin",
+    "ok": true,
+    "error": "ERROR:  42501: permission denied for table duty_status_audit\nLOCATION:  aclcheck_error, aclchk.c:2843"
+  },
+  {
+    "test": "analyst can run report",
+    "role": "kt04_analyst",
+    "ok": true,
+    "output": "4"
+  },
+  {
+    "test": "analyst cannot mutate through function",
+    "role": "kt04_analyst",
+    "ok": true,
+    "output": "BEGIN",
+    "error": "ERROR:  42501: permission denied for function release_duty\nLOCATION:  aclcheck_error, aclchk.c:2843"
+  },
+  {
+    "test": "app can run report",
+    "role": "kt04_app",
+    "ok": true,
+    "output": "4"
+  },
+  {
+    "test": "app cannot edit business roles",
+    "role": "kt04_app",
+    "ok": true,
+    "error": "ERROR:  42501: permission denied for table user_role\nLOCATION:  aclcheck_error, aclchk.c:2843"
+  },
+  {
+    "test": "app cannot delete audit entries",
+    "role": "kt04_app",
+    "ok": true,
+    "error": "ERROR:  42501: permission denied for schema transport_private\nLINE 1: DELETE FROM transport_private.duty_status_audit WHERE false\n                    ^\nLOCATION:  aclcheck_error, aclchk.c:2843"
+  },
+  {
+    "test": "app cannot create temporary tables",
+    "role": "kt04_app",
+    "ok": true,
+    "error": "ERROR:  42501: permission denied to create temporary tables in database \"transport_kt04\"\nLINE 1: CREATE TEMP TABLE forbidden_kt04 (id int)\n                          ^\nLOCATION:  InitTempTableNamespace, namespace.c:4413"
+  },
+  {
+    "test": "TLS active",
+    "role": "kt04_app",
+    "ok": true,
+    "output": "t"
+  },
+  {
+    "test": "non-TLS connection rejected",
+    "role": "kt04_app",
+    "ok": true,
+    "error": "psql: error: connection to server at \"primary\" (172.20.0.2), port 5432 failed: FATAL:  pg_hba.conf rejects connection for host \"172.20.0.2\", user \"kt04_app\", database \"transport_kt04\", no encryption"
+  },
+  {
+    "test": "missing TLS trust root rejected",
+    "role": "kt04_app",
+    "ok": true,
+    "error": "psql: error: connection to server at \"127.0.0.1\", port 5432 failed: root certificate file \"/run/secrets/kt04-missing-ca.crt\" does not exist\nEither provide the file, use the system's trusted roots with sslrootcert=system, or change sslmode to disable server certificate verification."
+  },
+  {
+    "test": "TLS server name mismatch rejected",
+    "role": "kt04_app",
+    "ok": true,
+    "error": "psql: error: connection to server at \"127.0.0.1\", port 5432 failed: server certificate for \"primary\" (and 2 other names) does not match host name \"kt04-wrong.invalid\""
+  },
+  {
+    "test": "client explicitly rejects superuser",
+    "role": "postgres",
+    "ok": true,
+    "output": "{\"time\":\"2026-11-04T12:41:05.26044622Z\",\"mode\":\"read\",\"elapsed_ms\":8,\"state\":\"error\",\"error\":\"postgresql_role_denied\"}"
+  }
+]

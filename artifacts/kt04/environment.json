@@ -1,0 +1,7 @@
+{
+  "checked_at": "2026-11-04T12:40:46.380772Z",
+  "database": "transport_kt04",
+  "project": "transport-kt04",
+  "server": "PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit",
+  "template": "Own educational configuration; teacher template not supplied"
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "continuous_client": {
+      "output": "{\"time\":\"2026-11-04T12:43:10.502468834Z\",\"mode\":\"watch\",\"elapsed_ms\":16,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":1,\"planned\":2},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"planned\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:11.523508584Z\",\"mode\":\"watch\",\"elapsed_ms\":31,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":1,\"planned\":2},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"planned\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:12.556150126Z\",\"mode\":\"watch\",\"elapsed_ms\":3,\"state\":\"error\",\"error\":\"postgresql_connection_or_protocol_error\"}\n{\"time\":\"2026-11-04T12:43:13.563694585Z\",\"mode\":\"watch\",\"elapsed_ms\":30,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:14.59791071Z\",\"mode\":\"watch\",\"elapsed_ms\":28,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:15.630885586Z\",\"mode\":\"watch\",\"elapsed_ms\":29,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:16.664192795Z\",\"mode\":\"watch\",\"elapsed_ms\":30,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:17.696790045Z\",\"mode\":\"watch\",\"elapsed_ms\":28,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:18.729791796Z\",\"mode\":\"watch\",\"elapsed_ms\":29,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:19.76468938Z\",\"mode\":\"watch\",\"elapsed_ms\":31,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:20.801400963Z\",\"mode\":\"watch\",\"elapsed_ms\":28,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:21.835694547Z\",\"mode\":\"watch\",\"elapsed_ms\":29,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n",
+      "exit_code": 0
+    },
+    "failed_read": {
+      "output": "{\"time\":\"2026-11-04T12:43:12.279325668Z\",\"mode\":\"read\",\"elapsed_ms\":68,\"state\":\"error\",\"error\":\"postgresql_connection_or_protocol_error\"}\n",
+      "exit_code": 1
+    },
+    "failure_seconds": 0.150724292,
+    "integrity": "PASS",
+    "node": "replica",
+    "primary_read": {
+      "output": "{\"time\":\"2026-11-04T12:43:12.440168626Z\",\"mode\":\"read\",\"elapsed_ms\":11,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":1,\"planned\":2},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"planned\"},{\"id\":3,\"status\":\"planned\"}]}\n",
+      "exit_code": 0
+    },
+    "primary_write": "\n",
+    "recovery_seconds": 0.774441458,
+    "started": "2026-11-04T12:43:10.404676Z"
+  },
+  {
+    "continuous_client": {
+      "output": "{\"time\":\"2026-11-04T12:43:22.256977756Z\",\"mode\":\"watch\",\"elapsed_ms\":9,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:23.267793381Z\",\"mode\":\"watch\",\"elapsed_ms\":23,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:24.29256459Z\",\"mode\":\"watch\",\"elapsed_ms\":4,\"state\":\"error\",\"error\":\"postgresql_connection_or_protocol_error\"}\n{\"time\":\"2026-11-04T12:43:25.297935507Z\",\"mode\":\"watch\",\"elapsed_ms\":29,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:26.332008008Z\",\"mode\":\"watch\",\"elapsed_ms\":29,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:27.366659383Z\",\"mode\":\"watch\",\"elapsed_ms\":31,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:28.40467005Z\",\"mode\":\"watch\",\"elapsed_ms\":29,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:29.434767884Z\",\"mode\":\"watch\",\"elapsed_ms\":15,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:30.453521468Z\",\"mode\":\"watch\",\"elapsed_ms\":28,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:31.482802885Z\",\"mode\":\"watch\",\"elapsed_ms\":21,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:32.508839052Z\",\"mode\":\"watch\",\"elapsed_ms\":30,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n{\"time\":\"2026-11-04T12:43:33.539834345Z\",\"mode\":\"watch\",\"elapsed_ms\":23,\"state\":\"ok\",\"duty_count\":3,\"status_counts\":{\"on_line\":2,\"planned\":1},\"duties\":[{\"id\":1,\"status\":\"on_line\"},{\"id\":2,\"status\":\"on_line\"},{\"id\":3,\"status\":\"planned\"}]}\n",
+      "exit_code": 0
+    },
+    "failed_read": {
+      "output": "{\"time\":\"2026-11-04T12:43:24.116570673Z\",\"mode\":\"read\",\"elapsed_ms\":81,\"state\":\"error\",\"error\":\"postgresql_connection_or_protocol_error\"}\n",
+      "exit_code": 1
+    },
+    "failed_write": {
+      "output": "{\"time\":\"2026-11-04T12:43:24.303690423Z\",\"mode\":\"release\",\"elapsed_ms\":3,\"state\":\"error\",\"error\":\"postgresql_connection_or_protocol_error\",\"request\":\"00000000-0000-4000-8000-000000000004\",\"outcome_unknown\":true,\"next_action\":\"after reconnecting, reuse the same request UUID and operation arguments\"}\n",
+      "exit_code": 1
+    },
+    "failure_seconds": 0.168372834,
+    "integrity": "PASS",
+    "node": "primary",
+    "recovery_seconds": 0.206931916,
+    "replica_read": "3\n",
+    "started": "2026-11-04T12:43:22.194729Z"
+  }
+]

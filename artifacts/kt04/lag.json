@@ -1,0 +1,31 @@
+{
+  "catchup_check_ms": 215,
+  "load_ms": 322,
+  "marker_id": 100000,
+  "marker_visible_on_replica": true,
+  "peak_replay_bytes": 30004808,
+  "primary_lsn": "0/8D99668",
+  "rows": 100000,
+  "samples": [
+    {
+      "time": "2026-11-04T12:43:01.859739Z",
+      "replay_bytes": 0
+    },
+    {
+      "time": "2026-11-04T12:43:02.012561Z",
+      "replay_bytes": 20635480
+    },
+    {
+      "time": "2026-11-04T12:43:02.100546Z",
+      "replay_bytes": 25985080
+    },
+    {
+      "time": "2026-11-04T12:43:02.182203Z",
+      "replay_bytes": 30004808
+    },
+    {
+      "time": "2026-11-04T12:43:02.318028Z",
+      "replay_bytes": 0
+    }
+  ]
+}

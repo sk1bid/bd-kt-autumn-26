@@ -37,7 +37,7 @@ func TestPackageRequiresAllEvidence(t *testing.T) {
 	if e := os.MkdirAll(dir, 0755); e != nil {
 		t.Fatal(e)
 	}
-	for _, name := range []string{"environment", "security", "restore", "replication", "analytics", "failures", "lag"} {
+	for _, name := range []string{"environment", "security", "restore", "replication", "analytics-proxy", "failures", "lag"} {
 		if e := os.WriteFile(filepath.Join(dir, name+".json"), []byte(`{}`), 0600); e != nil {
 			t.Fatal(e)
 		}

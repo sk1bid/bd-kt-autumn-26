@@ -71,7 +71,11 @@ func (r *Runner) SQL(q, service, role, database, ssl string) (Result, error) {
 	return r.Command(q, r.compose("exec", "-T", "-e", "PGSSLMODE="+ssl, "-e", "PGSSLROOTCERT=/run/secrets/ca.crt", "-e", "PGPASSFILE=/run/secrets/"+role+".pgpass", "-e", "PGCONNECT_TIMEOUT=3", service, "psql", "-X", "-w", "-h", service, "-U", role, "-d", database, "-At", "-v", "ON_ERROR_STOP=1", "-v", "VERBOSITY=verbose")...)
 }
 func (r *Runner) Client(service, role, mode string, extra ...string) (Result, error) {
-	args := []string{"exec", "-T", "-e", "PGHOST=" + service, "-e", "PGUSER=" + role, "-e", "PGDATABASE=" + DB, "-e", "PGPASSFILE=/run/secrets/" + role + ".pgpass", "-e", "PGSSLROOTCERT=/run/secrets/ca.crt", "client", "/work/bin/kt04-client", mode}
+	container, host, port := "client", service, "5432"
+	if service == "primary" && role == "kt04_app" {
+		container, host, port = "proxy-client", "localhost", "55404"
+	}
+	args := []string{"exec", "-T", "-e", "PGHOST=" + host, "-e", "PGPORT=" + port, "-e", "PGUSER=" + role, "-e", "PGDATABASE=" + DB, "-e", "PGPASSFILE=/run/secrets/" + role + ".pgpass", "-e", "PGSSLROOTCERT=/run/secrets/ca.crt", container, "/work/bin/kt04-client", mode}
 	return r.DC(append(args, extra...)...)
 }
 func (r *Runner) Save(name string, value any) error {
@@ -158,7 +162,7 @@ func (r *Runner) Replication() error {
 	if _, e := r.SQL("SELECT pg_create_physical_replication_slot('kt04_replica') WHERE NOT EXISTS (SELECT FROM pg_replication_slots WHERE slot_name='kt04_replica')", "", "", "", ""); e != nil {
 		return e
 	}
-	if _, e := r.DC("up", "-d", "--wait", "replica"); e != nil {
+	if _, e := r.DC("up", "-d", "--wait", "replica", "proxy-client"); e != nil {
 		return e
 	}
 	for node, want := range map[string]string{"primary": "f", "replica": "t"} {

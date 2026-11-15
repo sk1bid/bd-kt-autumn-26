@@ -1,0 +1,41 @@
+ route_id | number | planned_trips | done_trips | failed_trips | review_trips | pending_trips | unreleased_trips | planned_points | k | n | percent_on_time | unreliable_points
+----------+--------+---------------+------------+--------------+--------------+---------------+------------------+----------------+---+---+-----------------+-------------------
+        1 | ДЕМО-1 |             4 |          0 |            0 |            0 |             3 |                1 |             12 | 0 | 0 |                 |                 0
+(1 row)
+
+ route_id | number | late_points | affected_trips | mean_delay_minutes
+----------+--------+-------------+----------------+--------------------
+(0 rows)
+
+ id | detected_at | kind | registration_no | duty_number | route_number | trip_id | point_no | measured_value
+----+-------------+------+-----------------+-------------+--------------+---------+----------+----------------
+(0 rows)
+
+ device_id | vendor | total | accepted | invalid | stale | rejected_percent
+-----------+--------+-------+----------+---------+-------+------------------
+(0 rows)
+
+ device_id | message_id | first_received_at | generated_at | result | registration_no
+-----------+------------+-------------------+--------------+--------+-----------------
+(0 rows)
+
+ id | number | trips | load_rank
+----+--------+-------+-----------
+  1 | ДЕМО-1 |     4 |         1
+(1 row)
+
+ number | id |       starts_at        | departure_gap
+--------+----+------------------------+---------------
+ ДЕМО-1 |  1 | 2026-09-22 03:00:00+00 |
+ ДЕМО-1 |  2 | 2026-09-22 04:00:00+00 | 01:00:00
+ ДЕМО-1 |  3 | 2026-09-22 05:00:00+00 | 01:00:00
+ ДЕМО-1 |  4 | 2026-09-22 06:00:00+00 | 01:00:00
+(4 rows)
+
+ route_id | id |       starts_at        | planned_stops | cumulative_stops
+----------+----+------------------------+---------------+------------------
+        1 |  1 | 2026-09-22 03:00:00+00 |             3 |                3
+        1 |  2 | 2026-09-22 04:00:00+00 |             3 |                6
+        1 |  3 | 2026-09-22 05:00:00+00 |             3 |                9
+        1 |  4 | 2026-09-22 06:00:00+00 |             3 |               12
+(4 rows)

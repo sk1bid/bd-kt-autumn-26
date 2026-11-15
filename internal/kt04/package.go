@@ -14,7 +14,7 @@ import (
 func (r *Runner) Package() error {
 	paths := submissionFiles()
 	const evidence = "artifacts/kt04"
-	for _, stage := range []string{"environment", "security", "restore", "replication", "analytics", "failures", "lag", "pitr"} {
+	for _, stage := range []string{"environment", "security", "restore", "replication", "analytics-proxy", "failures", "lag", "pitr"} {
 		path := filepath.Join(evidence, stage+".json")
 		data, err := os.ReadFile(filepath.Join(r.Root, path))
 		if err != nil {
@@ -77,7 +77,6 @@ func addPackageFile(archive *zip.Writer, root, path string) error {
 // Explicit allowlist: training guides, AI notes and secrets never enter the submission.
 func submissionFiles() []string {
 	return []string{
-		"artifacts/kt04/analytics.json",
 		"artifacts/kt04/environment.json",
 		"artifacts/kt04/failures.json",
 		"artifacts/kt04/lag.json",
@@ -91,6 +90,11 @@ func submissionFiles() []string {
 		"cmd/kt04/main.go",
 		"deploy/kt04/archive-wal.sh",
 		"deploy/kt04/compose.yaml",
+		"deploy/kt04/haproxy.cfg",
+		"deploy/kt04/check-proxy.sh",
+		"artifacts/kt04/proxy-check.txt",
+		"artifacts/kt04/proxy-release.json",
+		"artifacts/kt04/analytics-proxy.json",
 		"deploy/kt04/entrypoint.sh",
 		"deploy/kt04/pg_hba.conf",
 		"deploy/kt04/postgresql.conf",

@@ -47,3 +47,18 @@ pg_restore --exit-on-error --create -d postgres transport.dump
 - **Ошибка данных с известным моментом.** Зафиксируйте целевую точку перед ошибочной транзакцией и проверьте, что базовая копия и WAL покрывают этот интервал. `./bin/kt04 pitr` воспроизводит учебный случай на отдельном экземпляре `pitr`. Для учебной точки проверьте наличие маркера до цели, отсутствие маркера после неё и целостность модели. Рабочая база продолжает обслуживаться primary.
 
 Журналы экземпляров восстановления доступны через `dc --profile restore --profile pitr logs --tail 80 restore pitr`. Сопоставьте результат с [артефактами прогона](../../artifacts/kt04/).
+
+## Демонстрация HAProxy на существующем стенде
+
+При работающих primary и replica выполнить из корня:
+
+```sh
+export KT04_SECRETS_DIR="$HOME/.local/share/transport-kt04/secrets"
+docker compose -f deploy/kt04/compose.yaml up -d haproxy proxy-client
+sh deploy/kt04/check-proxy.sh
+go run ./cmd/kt04 analytics
+```
+
+Клиент proxy-client разделяет сетевое пространство HAProxy. Его localhost:55404 ведёт исключительно на primary:5432, localhost:55405 — на replica:5432. Порты прокси доступны только через loopback этого пространства. При TCP passthrough TLS завершается на PostgreSQL. Оба существующих сертификата содержат DNS-имя localhost, а файлы pgpass уже содержат записи для этих двух портов. Проверки verify-full, SCRAM и права выполняет тот же стек PostgreSQL. Проверка TCP у HAProxy устанавливает доступность порта. Фактическую роль отдельно проверяют через pg_is_in_recovery(), а аналитический клиент требует target_session_attrs=standby.
+
+Команда `deploy/kt04/check-proxy.sh --outage` кратковременно останавливает реплику, проверяет отказ отчёта и доступность primary, затем запускает реплику и ждёт успешного запроса. Автоматического повышения standby нет. Протоколы — artifacts/kt04/proxy-check.txt, proxy-release.json и analytics-proxy.json в том же каталоге.

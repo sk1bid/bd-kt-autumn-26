@@ -19,19 +19,23 @@ func (r *Runner) Analytics() error {
 	if e != nil {
 		return e
 	}
-	replica, e := r.SQL(query, "replica", "kt04_analyst", DB, "")
+	replica, e := r.proxyReport(query)
 	if e != nil {
 		return e
 	}
 	if primary.Out != replica.Out || strings.TrimSpace(replica.Out) == "" {
 		return fmt.Errorf("analytical reports differ or are empty")
 	}
-	node, e := r.SQL("SELECT session_user,pg_is_in_recovery()", "replica", "kt04_analyst", DB, "")
+	node, e := r.proxyReport("SELECT session_user,pg_is_in_recovery()")
 	if e != nil {
 		return e
 	}
 	if strings.TrimSpace(node.Out) != "kt04_analyst|t" {
 		return fmt.Errorf("analytics not executed by analyst on standby")
 	}
-	return r.Save("analytics", map[string]any{"role_node": strings.TrimSpace(node.Out), "query": query, "primary": primary.Out, "replica": replica.Out, "equal_after_replay": true})
+	return r.Save("analytics-proxy", map[string]any{"role_node": strings.TrimSpace(node.Out), "query": query, "primary": primary.Out, "replica": replica.Out, "equal_after_replay": true})
+}
+
+func (r *Runner) proxyReport(q string) (Result, error) {
+	return r.Command(q, r.compose("exec", "-T", "proxy-client", "psql", "-XAtw", "-v", "ON_ERROR_STOP=1", "-d", "host=localhost port=55405 user=kt04_analyst dbname="+DB+" target_session_attrs=standby connect_timeout=3 sslmode=verify-full sslrootcert=/run/secrets/ca.crt passfile=/run/secrets/kt04_analyst.pgpass")...)
 }

@@ -1,0 +1,5 @@
+TLS roles: kt04_app on primary, kt04_analyst on standby
+BEGIN
+t
+ROLLBACK
+Replica offline: report failed, primary available. Replica restored.
